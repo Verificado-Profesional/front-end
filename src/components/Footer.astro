@@ -1,0 +1,45 @@
+---
+import Copyright from './icons/Copyright.astro';
+
+const { pathname } = Astro.props;
+---
+
+<footer class='w-full bg-[#04001F] flex justify-center border-t'>
+  <div class='w-4/5 py-10 flex flex-row justify-between items-center'>
+    <section class='flex flex-row border-r gap-10'>
+      <img src='/FactifyLogo.svg' alt='Factify' width='120px' height='120px' />
+      <nav>
+        <ul class='flex flex-col gap-4'>
+          <li class:list={['py-1 w-32', { selected: pathname === '/' }]}>
+            <a href='/'>Inicio</a>
+          </li>
+          <li
+            class:list={['py-1 w-32', { selected: pathname === '/analizar' }]}
+          >
+            <a href='/analizar'>Analizar</a>
+          </li>
+          <li
+            class:list={[
+              'py-1 w-32',
+              { selected: pathname === '/estadisticas' },
+            ]}
+          >
+            <a href='/estadisticas'>Estadísticas</a>
+          </li>
+        </ul>
+      </nav>
+    </section>
+    <section class='flex flex-row text-4xl items-center gap-5'>
+      <picture class='w-9 h-9'>
+        <Copyright />
+      </picture>
+      <h1>2024 - FACTIFY</h1>
+    </section>
+  </div>
+</footer>
+
+<style>
+  .selected {
+    text-decoration: underline;
+  }
+</style>
