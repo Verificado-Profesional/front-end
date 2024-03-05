@@ -1,12 +1,10 @@
 ---
 import Layout from '@/layouts/Layout.astro';
+import Introduction from '@/components/Introduction.astro';
 ---
 
-<Layout title='Factify' pathname="/">
+<Layout title='Factify' pathname='/'>
   <main class='w-full flex flex-col justify-center items-start'>
-    <section
-      class="w-full h-screen bg-[url('/assets/Fondo.svg')] bg-auto bg-repeat"
-    >
-    </section>
+    <Introduction />
   </main>
 </Layout>

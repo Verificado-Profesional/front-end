@@ -1,0 +1,48 @@
+<section
+  class="w-full h-screen bg-[url('/assets/Fondo.svg')] bg-fixed bg-auto bg-repeat flex justify-center items-center"
+>
+  <div class='w-4/5 h-full flex flex-row justify-between items-center'>
+    <article class='w-1/2 flex flex-col gap-5 relative z-0'>
+      <h2 class='text-xl font-medium text-pretty'>
+        Desbloqueando el Poder de la Verdad en un Mundo de Desinformación
+      </h2>
+      <p class='text-xl font-extralight text-balance'>
+        En una era donde la desinformación se propaga como un incendio forestal,
+        hay un faro de luz que atraviesa la niebla de las noticias falsas:
+        ¡Factify! Somos tu fuente definitiva para la verificación de hechos,
+        precisión y confiabilidad en un paisaje digital cada vez más complejo.
+      </p>
+    </article>
+    <picture class='relative z-0 w-96 h-96'>
+      <img class='w-96 h-96' src='/assets/redes.svg' alt='Redes' />
+    </picture>
+  </div>
+</section>
+
+<style>
+  picture::after {
+    background-color: #5f78ff;
+    border-radius: 50%;
+    content: '';
+    filter: blur(100px);
+    height: 75%;
+    left: 12.5%;
+    position: absolute;
+    top: 12.5%;
+    width: 75%;
+    z-index: -1;
+  }
+
+  article::after {
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    content: '';
+    filter: blur(50px);
+    height: 150%;
+    left: 0;
+    position: absolute;
+    top: -25%;
+    width: 100%;
+    z-index: -1;
+  }
+</style>
