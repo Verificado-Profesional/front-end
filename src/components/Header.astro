@@ -1,8 +1,10 @@
 ---
-const pathname = Astro.url.pathname;
+const {pathname} = Astro.props;
 ---
 
-<header class='w-full h-20 bg-[#04001F]/50 backdrop-blur-[2px] flex justify-center fixed inset-0'>
+<header
+  class='w-full h-20 bg-[#04001F]/50 backdrop-blur-[2px] flex justify-center fixed inset-0'
+>
   <div class='w-4/5 flex flex-row justify-between items-center'>
     <img src='/FactifyLogo.svg' alt='Factify' width='60px' height='60px' />
     <nav>

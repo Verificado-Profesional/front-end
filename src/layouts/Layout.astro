@@ -26,25 +26,25 @@ const { title } = Astro.props;
     />
   </head>
   <body>
-    <Header />
+    <Header client:load pathname={Astro.url.pathname} />
     <slot />
   </body>
 </html>
 <style is:global>
   :root {
-    --color-primary: #04001F;
+    --color-primary: #04001f;
   }
   html {
     font-family: Montserrat, system-ui, sans-serif;
     background: var(--color-primary);
-	color: white;
+    color: white;
   }
   * {
-	box-sizing: border-box;
+    box-sizing: border-box;
   }
 
   body {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
   }
 </style>
