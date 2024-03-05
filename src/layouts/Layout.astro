@@ -1,4 +1,6 @@
 ---
+import Header from '@/components/Header.astro';
+
 interface Props {
   title: string;
 }
@@ -24,15 +26,17 @@ const { title } = Astro.props;
     />
   </head>
   <body>
+    <Header />
     <slot />
   </body>
 </html>
 <style is:global>
   :root {
+    --color-primary: #04001F;
   }
   html {
     font-family: Montserrat, system-ui, sans-serif;
-    background: #04001F;
+    background: var(--color-primary);
 	color: white;
   }
   * {
