@@ -1,5 +1,6 @@
 ---
 import Copyright from './icons/Copyright.astro';
+import Logo from './Logo.astro';
 
 const { pathname } = Astro.props;
 ---
@@ -7,7 +8,7 @@ const { pathname } = Astro.props;
 <footer class='w-full bg-[#04001F] flex justify-center border-t'>
   <div class='w-4/5 py-10 flex flex-row justify-between items-center'>
     <section class='flex flex-row border-r gap-10'>
-      <img src='/FactifyLogo.svg' alt='Factify' width='120px' height='120px' />
+      <Logo width='120px' height='120px' />
       <nav>
         <ul class='flex flex-col gap-4'>
           <li class:list={['py-1 w-32', { selected: pathname === '/' }]}>
