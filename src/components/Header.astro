@@ -10,19 +10,22 @@ const { pathname } = Astro.props;
 >
   <div class='w-4/5 flex flex-row justify-between items-center'>
     <Logo width='60px' height='60px' />
-    <div class=" sm:hidden">
-      <HamburguerIcon client:visible/>
+    <div class='md:hidden'>
+      <HamburguerIcon client:visible />
     </div>
-    <nav class="hidden sm:flex">
+    <nav class='hidden md:flex'>
       <ul class='flex flex-row gap-16'>
         <li
-          class:list={['py-1 w-32 text-center', { selected: pathname === '/' }]}
+          class:list={[
+            'py-1 lg:w-32 md:w-28 lg:text-xl md:text-md text-center',
+            { selected: pathname === '/' },
+          ]}
         >
           <a href='/'>Inicio</a>
         </li>
         <li
           class:list={[
-            'py-1 w-32 text-center',
+            'py-1 lg:w-32 md:w-28 lg:text-xl md:text-md text-center',
             { selected: pathname === '/analizar' },
           ]}
         >
@@ -30,7 +33,7 @@ const { pathname } = Astro.props;
         </li>
         <li
           class:list={[
-            'py-1 w-32 text-center',
+            'py-1 lg:w-32 md:w-28 lg:text-xl md:text-md text-center',
             { selected: pathname === '/estadisticas' },
           ]}
         >
