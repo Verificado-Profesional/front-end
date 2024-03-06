@@ -1,20 +1,16 @@
-import { useState } from 'react';
 import styles from './HamburguerIcon.module.css';
 
 export const prerender = false;
 
-const HamburguerIcon = () => {
-  const [isSelected, setIsSelected] = useState(false);
+interface Props {
+  isSelected: boolean;
+  onClick: () => void;
+}
 
+const HamburguerIcon = ({ isSelected, onClick }: Props) => {
   return (
     <section className={styles.section}>
-      <div
-        className={styles.container}
-        onClick={() => {
-          console.log('click');
-          setIsSelected(!isSelected);
-        }}
-      >
+      <div className={styles.container} onClick={onClick}>
         <div
           className={`${styles.line} ${
             isSelected ? styles['line1-selected'] : styles.line1
