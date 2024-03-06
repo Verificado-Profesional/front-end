@@ -5,25 +5,39 @@ const { pathname } = Astro.props;
 ---
 
 <footer class='w-full bg-[#04001F] flex justify-center border-t'>
-  <div class='w-4/5 py-10 flex flex-row justify-between items-center'>
-    <section class='flex flex-row border-r gap-10'>
+  <div
+    class='w-4/5 py-10 flex flex-col md:flex-row justify-between md:items-center'
+  >
+    <section
+      class='flex flex-row md:border-r border-b md:border-b-0 gap-10 md:justify-start justify-between pb-5 md:pb-0 mb-5 md:mb-0'
+    >
       <a href='/' class='rounded-full'>
-        <img src='/FactifyLogo.svg' alt='Factify' width='120px' height='120px' />
+        <img
+          src='/FactifyLogo.svg'
+          alt='Factify'
+          width='120px'
+          height='120px'
+        />
       </a>
       <nav>
         <ul class='flex flex-col gap-4'>
-          <li class:list={['py-1 w-32', { selected: pathname === '/' }]}>
+          <li
+            class:list={['py-1 w-32', { 'footer-selected': pathname === '/' }]}
+          >
             <a href='/'>Inicio</a>
           </li>
           <li
-            class:list={['py-1 w-32', { selected: pathname === '/analizar' }]}
+            class:list={[
+              'py-1 w-32',
+              { 'footer-selected': pathname === '/analizar' },
+            ]}
           >
             <a href='/analizar'>Analizar</a>
           </li>
           <li
             class:list={[
               'py-1 w-32',
-              { selected: pathname === '/estadisticas' },
+              { 'footer-selected': pathname === '/estadisticas' },
             ]}
           >
             <a href='/estadisticas'>Estadísticas</a>
@@ -31,8 +45,10 @@ const { pathname } = Astro.props;
         </ul>
       </nav>
     </section>
-    <section class='flex flex-row text-4xl items-center gap-5'>
-      <picture class='w-9 h-9'>
+    <section
+      class='flex flex-row md:text-2xl lg:text-4xl justify-center items-center gap-5 transition-all duration-300 ease-in-out'
+    >
+      <picture class='md:w-9 md:h-9 w-5 h-5'>
         <Copyright />
       </picture>
       <h1>2024 - FACTIFY</h1>
@@ -41,7 +57,7 @@ const { pathname } = Astro.props;
 </footer>
 
 <style>
-  .selected {
+  .footer-selected {
     text-decoration: underline;
   }
 </style>
