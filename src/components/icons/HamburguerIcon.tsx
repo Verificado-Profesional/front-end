@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import styles from './HamburguerIcon.module.css';
 
+export const prerender = false;
+
 const HamburguerIcon = () => {
   const [isSelected, setIsSelected] = useState(false);
 
