@@ -1,5 +1,6 @@
 ---
 import Logo from '@/components/Logo.astro';
+import HamburguerIcon from './icons/HamburguerIcon';
 
 const { pathname } = Astro.props;
 ---
@@ -9,7 +10,10 @@ const { pathname } = Astro.props;
 >
   <div class='w-4/5 flex flex-row justify-between items-center'>
     <Logo width='60px' height='60px' />
-    <nav>
+    <div class=" sm:hidden">
+      <HamburguerIcon client:visible/>
+    </div>
+    <nav class="hidden sm:flex">
       <ul class='flex flex-row gap-16'>
         <li
           class:list={['py-1 w-32 text-center', { selected: pathname === '/' }]}
