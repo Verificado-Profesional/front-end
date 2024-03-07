@@ -7,8 +7,10 @@ import Button from '../components/Button.astro';
     <h1 class='text-3xl uppercase font-black text-[#92A7FF] mt-10 mb-10'>
       Realizá diferentes análisis
     </h1>
-    <div class='w-full flex flex-row justify-between items-start mb-10'>
-      <article class='flex flex-col justify-between w-1/4 gap-8'>
+    <div
+      class='w-full flex flex-row flex-wrap justify-center lg:justify-between items-start mb-10 gap-6'
+    >
+      <article class='flex flex-col justify-between w-1/4 min-w-64 gap-8'>
         <div class='flex flex-col justify-between gap-4 items-center w-full'>
           <img
             src='/assets/veracity.svg'
@@ -17,7 +19,7 @@ import Button from '../components/Button.astro';
             height='auto'
           />
           <h2 class='text-xl text-center font-semibold'>Veracidad</h2>
-          <p class='w-full text-center min-h-60 font-extralight'>
+          <p class='w-full text-center min-h-72 font-extralight'>
             Nuestra innovadora herramienta utiliza un algoritmo inteligente,
             entrenado con una base de datos exclusiva, para determinar con
             precisión si una noticia es auténtica o falsa. ¡Obtén la verdad al
@@ -26,7 +28,7 @@ import Button from '../components/Button.astro';
         </div>
         <Button type='primary' title='Analizar' href='/analizar/veracidad' />
       </article>
-      <article class='flex flex-col justify-between w-1/4 gap-8'>
+      <article class='flex flex-col justify-between w-1/4 min-w-64 gap-8'>
         <div class='flex flex-col justify-between gap-4 items-center w-full'>
           <img
             src='/assets/sentiment.svg'
@@ -35,7 +37,7 @@ import Button from '../components/Button.astro';
             height='auto'
           />
           <h2 class='text-xl text-center font-semibold'>Sentimiento</h2>
-          <p class='w-full text-center min-h-60 font-extralight'>
+          <p class='w-full text-center min-h-72 font-extralight'>
             Descubre cómo se sienten realmente tus lectores con nuestro potente
             algoritmo de análisis de sentimientos. Entrenado con nuestra amplia
             base de datos, identifica si una noticia genera emociones negativas,
@@ -46,7 +48,7 @@ import Button from '../components/Button.astro';
 
         <Button type='primary' title='Analizar' href='/analizar/sentimiento' />
       </article>
-      <article class='flex flex-col justify-between w-1/4 gap-8'>
+      <article class='flex flex-col justify-between w-1/4 min-w-64 gap-8'>
         <div class='flex flex-col justify-between gap-4 items-center w-full'>
           <img
             src='/assets/syntactic.svg'
@@ -55,7 +57,7 @@ import Button from '../components/Button.astro';
             height='auto'
           />
           <h2 class='text-xl text-center font-semibold'>Sintáctico</h2>
-          <p class='w-full text-center min-h-60 font-extralight'>
+          <p class='w-full text-center min-h-72 font-extralight'>
             Desbloquea el poder de entender el núcleo de cada historia con
             nuestro avanzado algoritmo de análisis sintáctico. Utilizando la
             reconocida biblioteca SpaCy, te ofrecemos una visión profunda de la
