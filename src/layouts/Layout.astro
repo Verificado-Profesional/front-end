@@ -1,4 +1,6 @@
 ---
+import { ViewTransitions } from 'astro:transitions';
+
 import Footer from '@/components/Footer.astro';
 import Header from '@/components/Header';
 
@@ -31,6 +33,7 @@ const { title, pathname } = Astro.props;
     <Header client:load pathname={pathname} />
     <slot />
     <Footer pathname={pathname}/>
+    <ViewTransitions />
   </body>
 </html>
 <style is:global>
