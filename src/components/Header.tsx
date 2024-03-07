@@ -17,7 +17,11 @@ export default function Header({ pathname }: Props) {
   };
 
   return (
-    <header className='w-full h-20 bg-[#04001F]/50 backdrop-blur-sm flex justify-center fixed inset-0 z-50'>
+    <header
+      className={`w-full h-20 ${
+        openMenu ? 'bg-[#04001F]' : 'backdrop-blur-sm bg-[#04001F]/50'
+      } flex justify-center fixed inset-0 z-50 transition-all duration-500`}
+    >
       <div className='w-4/5 flex flex-row justify-between items-center'>
         <a href='/' className='rounded-full'>
           <img
@@ -30,8 +34,12 @@ export default function Header({ pathname }: Props) {
         <div className='md:hidden'>
           <HamburguerIcon isSelected={openMenu} onClick={handleClick} />
         </div>
-        <nav className='hidden md:flex'>
-          <ul className='flex flex-row gap-16'>
+        <nav
+          className={`flex w-full md:w-auto md:static absolute top-20 -left-full md:translate-x-0 transition-all duration-500 ${
+            openMenu ? 'translate-x-full' : 'translate-x-0'
+          }`}
+        >
+          <ul className='flex flex-col bg-[#04001F] md:bg-transparent w-full md:flex-row md:gap-16'>
             <li
               className={`${
                 pathname === '/' ? 'selected' : ''

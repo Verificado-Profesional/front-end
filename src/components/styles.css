@@ -3,3 +3,11 @@
   color: var(--color-primary);
   border-radius: 25px;
 }
+
+@media screen and (max-width: 768px) {
+  .selected {
+    background-color: white;
+    color: var(--color-primary);
+    border-radius: 0;
+  }
+}
