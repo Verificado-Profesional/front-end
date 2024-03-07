@@ -44,7 +44,7 @@ export default function Header({ pathname }: Props) {
                 pathname === '/analizar' ? 'selected' : ''
               } py-1 lg:w-32 md:w-28 md:text-md text-center transition-all duration-300 ease-in-out`}
             >
-              <a href='/analizar'>Analizar</a>
+              <a href='/analizar/veracidad'>Analizar</a>
             </li>
             <li
               className={`${
