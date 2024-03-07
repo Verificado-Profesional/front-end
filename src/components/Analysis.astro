@@ -1,0 +1,70 @@
+---
+import Button from '../components/Button.astro';
+---
+
+<section class='w-full flex justify-center items-center'>
+  <div class='w-4/5 flex flex-col justify-between items-start'>
+    <h1 class='text-3xl uppercase font-black text-[#92A7FF] mt-10 mb-10'>
+      Realizá diferentes análisis
+    </h1>
+    <div class='w-full flex flex-row justify-between items-start mb-10'>
+      <article class='flex flex-col justify-between w-1/4 gap-8'>
+        <div class='flex flex-col justify-between gap-4 items-center w-full'>
+          <img
+            src='/assets/veracity.svg'
+            alt='Veracidad'
+            width='100%'
+            height='auto'
+          />
+          <h2 class='text-xl text-center font-semibold'>Veracidad</h2>
+          <p class='w-full text-center min-h-60 font-extralight'>
+            Nuestra innovadora herramienta utiliza un algoritmo inteligente,
+            entrenado con una base de datos exclusiva, para determinar con
+            precisión si una noticia es auténtica o falsa. ¡Obtén la verdad al
+            instante!
+          </p>
+        </div>
+        <Button type='primary' title='Analizar' href='/analizar/veracidad' />
+      </article>
+      <article class='flex flex-col justify-between w-1/4 gap-8'>
+        <div class='flex flex-col justify-between gap-4 items-center w-full'>
+          <img
+            src='/assets/sentiment.svg'
+            alt='Sentimiento'
+            width='100%'
+            height='auto'
+          />
+          <h2 class='text-xl text-center font-semibold'>Sentimiento</h2>
+          <p class='w-full text-center min-h-60 font-extralight'>
+            Descubre cómo se sienten realmente tus lectores con nuestro potente
+            algoritmo de análisis de sentimientos. Entrenado con nuestra amplia
+            base de datos, identifica si una noticia genera emociones negativas,
+            positivas o neutras, proporcionándote una valiosa perspectiva sobre
+            su impacto emocional.
+          </p>
+        </div>
+
+        <Button type='primary' title='Analizar' href='/analizar/sentimiento' />
+      </article>
+      <article class='flex flex-col justify-between w-1/4 gap-8'>
+        <div class='flex flex-col justify-between gap-4 items-center w-full'>
+          <img
+            src='/assets/syntactic.svg'
+            alt='Sintáctico'
+            width='100%'
+            height='auto'
+          />
+          <h2 class='text-xl text-center font-semibold'>Sintáctico</h2>
+          <p class='w-full text-center min-h-60 font-extralight'>
+            Desbloquea el poder de entender el núcleo de cada historia con
+            nuestro avanzado algoritmo de análisis sintáctico. Utilizando la
+            reconocida biblioteca SpaCy, te ofrecemos una visión profunda de la
+            estructura y gramática de cualquier texto, ¡permitiéndote descubrir
+            lo que realmente importa!
+          </p>
+        </div>
+        <Button type='primary' title='Analizar' href='/analizar/sintactico' />
+      </article>
+    </div>
+  </div>
+</section>
