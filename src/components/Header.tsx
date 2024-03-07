@@ -43,21 +43,21 @@ export default function Header({ pathname }: Props) {
             <li
               className={`${
                 pathname === '/' ? 'selected' : ''
-              } py-1 lg:w-32 md:w-28 md:text-md text-center transition-all duration-300 ease-in-out`}
+              } py-3 md:py-1 lg:w-32 md:w-28 md:text-md text-center transition-all duration-300 ease-in-out`}
             >
               <a href='/'>Inicio</a>
             </li>
             <li
               className={`${
                 pathname === '/analizar' ? 'selected' : ''
-              } py-1 lg:w-32 md:w-28 md:text-md text-center transition-all duration-300 ease-in-out`}
+              } py-3 md:py-1 lg:w-32 md:w-28 md:text-md text-center transition-all duration-300 ease-in-out`}
             >
               <a href='/analizar/veracidad'>Analizar</a>
             </li>
             <li
               className={`${
                 pathname === '/estadisticas' ? 'selected' : ''
-              } py-1 lg:w-32 md:w-28 md:text-md text-center transition-all duration-300 ease-in-out`}
+              } py-3 md:py-1 lg:w-32 md:w-28 md:text-md text-center transition-all duration-300 ease-in-out`}
             >
               <a href='/estadisticas'>Estadísticas</a>
             </li>
