@@ -1,26 +1,8 @@
 ---
 import Layout from '@/layouts/Layout.astro';
+import Analizar from '@/components/Analizar';
 ---
 
 <Layout title='Factify' pathname='/analizar'>
-  <main class='w-full flex flex-col justify-center items-start'>
-    <section
-      class="w-full h-screen bg-[url('/assets/Fondo.svg')] bg-fixed bg-auto bg-repeat flex justify-center items-center"
-    >
-      <article
-        class='h-4/6 sm:h-3/5 p-5 sm:p-10 aspect-[16/28] sm:aspect-[16/20] md:aspect-[16/16] lg:aspect-[16/12] xl:aspect-[16/10] bg-white rounded-xl flex flex-col justify-between transition-all duration-300'
-      >
-        <h1 class='text-[#04001F] text-4xl font-bold'>Ingresar Noticia</h1>
-        <textarea
-          class='border rounded-xl border-[#04001F] h-3/5 text-[#04001F] p-4 resize-none outline-none'
-          placeholder='Ingresar noticia'></textarea>
-        <div class='w-full flex justify-end'>
-          <a
-            class='w-40 px-4 py-2 bg-[#04001F] rounded-3xl font-semibold hover:bg-[#242844] flex justify-center items-center'
-            href='/analizar/veracidad'>Analizar</a
-          >
-        </div>
-      </article>
-    </section>
-  </main>
+  <Analizar client:idle />
 </Layout>

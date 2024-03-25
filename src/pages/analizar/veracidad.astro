@@ -1,13 +1,11 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import AnalisisLayout from '../../layouts/AnalisisLayout.astro';
+import Veracity from '../../components/Veracidad';
 ---
 
 <Layout title='Factify' pathname='/analizar'>
-  <main class='w-full flex flex-col justify-center items-start'>
-    <section
-      class="w-full h-screen bg-[url('/assets/Fondo.svg')] bg-fixed bg-auto bg-repeat"
-    >
-      <h1>Veracidad</h1>
-    </section>
-  </main>
+  <AnalisisLayout>
+    <Veracity client:idle />
+  </AnalisisLayout>
 </Layout>
