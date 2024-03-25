@@ -36,6 +36,7 @@ export default function Analizar() {
           </div>
           {isWithLink ? (
             <input
+              id='newInput'
               type='text'
               placeholder='Ingresar link'
               className={`${
@@ -49,6 +50,7 @@ export default function Analizar() {
             />
           ) : (
             <textarea
+              id='newArea'
               className='border rounded-xl border-[#04001F] h-3/5 text-[#04001F] p-4 resize-none outline-none'
               placeholder='Ingresar noticia'
               onChange={handleChange}
@@ -60,7 +62,7 @@ export default function Analizar() {
                 (isWithLink && fetchStatus === 200) || !isWithLink
                   ? 'bg-[#04001F] hover:bg-[#242844]'
                   : 'bg-gray-500 pointer-events-none cursor-not-allowed'
-              } rounded-3xl font-semibold flex justify-center items-center`}
+              } rounded-3xl font-semibold flex justify-center items-center transition-all duration-300`}
               href='/analizar/veracidad'
             >
               Analizar

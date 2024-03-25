@@ -35,6 +35,7 @@ export const useInfo = ({ isWithLink }: Props) => {
       content: '',
       link: '',
     });
+    setFetchStatus(0);
   }, []);
 
   useEffect(() => {
@@ -47,8 +48,9 @@ export const useInfo = ({ isWithLink }: Props) => {
           content: $('body').text(),
           link: info.link,
         });
+      } else {
+        setFetchStatus(404);
       }
-      console.log(article);
     };
 
     if (info.link !== '') {

@@ -11,3 +11,17 @@
     border-radius: 0;
   }
 }
+
+#newArea,
+#newInput {
+  animation: start 300ms ease-in-out;
+}
+
+@keyframes start {
+  from {
+    transform: scaleY(0.9);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}

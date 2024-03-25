@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import HamburguerIcon from './icons/HamburguerIcon';
 
-import './styles.css';
+import '@/styles/styles.css';
 
 export const prerender = false;
 
