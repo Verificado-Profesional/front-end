@@ -1,6 +1,7 @@
-import type { APISpaceXResponse } from '@/types/response';
 import { useEffect, useState, type ChangeEvent } from 'react';
 import { create } from 'zustand';
+import { extract } from '@extractus/article-extractor';
+import * as cheerio from 'cheerio';
 
 interface Props {
   isWithLink: boolean;
@@ -38,30 +39,16 @@ export const useInfo = ({ isWithLink }: Props) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(info.link);
-      const html = await response.text();
-      const tempElement = document.createElement('div');
-      tempElement.innerHTML = html;
-      const scripts = tempElement.querySelectorAll('script');
-
-      let descriptionJson: APISpaceXResponse | null = null;
-      for (const script of scripts) {
-        if (script.textContent?.includes('"@type":["NewsArticle"]')) {
-          descriptionJson = JSON.parse(script.textContent) as APISpaceXResponse;
-          break;
-        }
-      }
-
-      if (descriptionJson) {
+      const article = await extract(info.link);
+      if (article) {
+        const $ = cheerio.load(article.content as string);
+        setFetchStatus(200);
         setInfo({
-          content: descriptionJson.articleBody,
+          content: $('body').text(),
           link: info.link,
         });
-      } else {
-        setFetchStatus(500);
       }
-
-      setFetchStatus(response.status);
+      console.log(article);
     };
 
     if (info.link !== '') {
