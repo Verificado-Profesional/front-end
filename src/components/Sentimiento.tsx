@@ -1,10 +1,10 @@
 import { useInfoContext } from '@/hooks/useInfo';
 
-export default function Veracity() {
+export default function Sentiment() {
   const { info } = useInfoContext();
   return (
     <div>
-      Veracidad
+      Sentimiento
       <p>Content: {info.content}</p>
       <p>Link: {info.link}</p>
     </div>

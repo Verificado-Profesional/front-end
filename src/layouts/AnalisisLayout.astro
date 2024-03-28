@@ -1,8 +1,14 @@
 ---
 import AnalisisHeader from '@/components/AnalisisHeader';
+
+const { pathname }: { pathname?: string } = Astro.props;
 ---
 
-<article class='min-h-screen pt-20'>
-  <AnalisisHeader />
-  <slot />
+<article class='min-h-screen'>
+  <section
+    class="w-full h-screen pt-24 bg-[url('/assets/Fondo.svg')] bg-fixed bg-auto bg-repeat flex flex-col justify-start items-center"
+  >
+    <AnalisisHeader pathname={pathname} />
+    <slot />
+  </section>
 </article>
