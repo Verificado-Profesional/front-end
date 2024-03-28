@@ -17,10 +17,10 @@ export default function HeaderButton({
         isSelected
           ? 'bg-white text-[#04001F] cursor-auto'
           : 'bg-[#04001F]/80 cursor-pointer'
-      } w-40 font-semibold hover:bg-white hover:text-[#04001F]`}
+      } w-full sm:w-40 font-semibold hover:bg-white hover:text-[#04001F]`}
     >
       <a
-        className='w-full h-full rounded-xl py-4 flex flex-col justify-center items-center gap-4'
+        className='w-full h-full rounded-xl py-2 sm:py-4 flex flex-row sm:flex-col justify-center items-center gap-4'
         href={`/analizar/${href}`}
       >
         {icon}

@@ -4,7 +4,7 @@
   border-radius: 25px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .selected {
     background-color: white;
     color: var(--color-primary);
