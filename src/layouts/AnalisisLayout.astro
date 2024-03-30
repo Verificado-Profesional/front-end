@@ -12,6 +12,7 @@ const { pathname }: { pathname?: string } = Astro.props;
     <AnalisisHeader pathname={pathname} />
     <div class='w-4/5 h-auto sm:h-4/5 flex flex-row items-start py-10'>
       <Noticia client:idle />
+      <slot/>
     </div>
   </section>
 </article>

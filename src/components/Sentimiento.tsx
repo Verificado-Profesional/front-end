@@ -1,12 +1,7 @@
-import { useInfoContext } from '@/hooks/useInfo';
+import useRedirect from '@/hooks/useRedirect';
 
 export default function Sentiment() {
-  const { info } = useInfoContext();
-  return (
-    <div>
-      Sentimiento
-      <p>Content: {info.content}</p>
-      <p>Link: {info.link}</p>
-    </div>
-  );
+  useRedirect();
+
+  return <div>Sentimiento</div>;
 }
