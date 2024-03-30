@@ -1,6 +1,5 @@
 ---
 import AnalisisHeader from '@/components/AnalisisHeader';
-import Noticia from '@/components/Noticia';
 
 const { pathname }: { pathname?: string } = Astro.props;
 ---
@@ -10,9 +9,6 @@ const { pathname }: { pathname?: string } = Astro.props;
     class="w-full min-h-screen pt-24 bg-[url('/assets/Fondo.svg')] bg-fixed bg-auto bg-repeat flex flex-col justify-start items-center"
   >
     <AnalisisHeader pathname={pathname} />
-    <div class='w-4/5 h-auto sm:h-4/5 flex flex-row items-start py-10'>
-      <Noticia client:idle />
-      <slot/>
-    </div>
+    <slot />
   </section>
 </article>

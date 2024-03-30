@@ -28,17 +28,24 @@ const { title, pathname }: Props = Astro.props;
       href='https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap'
       rel='stylesheet'
     />
+    <link href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap" rel="stylesheet">
   </head>
   <body>
     <Header client:load pathname={pathname} />
     <slot />
-    <Footer pathname={pathname}/>
+    <Footer pathname={pathname} />
     <ViewTransitions />
   </body>
 </html>
 <style is:global>
   :root {
     --color-primary: #04001f;
+    --text-green: #00C66A;
+    --text-red: #F24A4A;
+    --text-yellow: #C39A1C;
+    --bg-green: #e5faf1;
+    --bg-red: #FAE6E8;
+    --bg-yellow: #fff9e5;
   }
   html {
     font-family: Montserrat, system-ui, sans-serif;

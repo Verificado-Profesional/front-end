@@ -1,13 +1,11 @@
 import { useEffect, useState } from 'react';
-import { useInfoContext } from './useInfo';
 
-export default function useRedirect() {
-  const { info } = useInfoContext();
+export default function useRedirect({ content }: { content: string }) {
   const [firstTime, setFirstTime] = useState(true);
 
   useEffect(() => {
     if (!firstTime) {
-      if (info.content === '') {
+      if (content === '') {
         window.location.replace('/analizar');
       }
     }

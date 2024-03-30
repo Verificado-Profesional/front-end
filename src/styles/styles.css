@@ -25,3 +25,9 @@
     transform: scaleY(1);
   }
 }
+
+.titan-one-regular {
+  font-family: 'Titan One', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
