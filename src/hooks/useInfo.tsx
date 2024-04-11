@@ -1,7 +1,5 @@
 import { useEffect, useState, type ChangeEvent } from 'react';
 import { create } from 'zustand';
-import { extract } from '@extractus/article-extractor';
-import * as cheerio from 'cheerio';
 
 interface Props {
   isWithLink: boolean;
@@ -40,16 +38,27 @@ export const useInfo = ({ isWithLink }: Props) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const article = await extract(info.link);
-      if (article) {
-        const $ = cheerio.load(article.content as string);
+      const response = await fetch(
+        'https://verificado-back-end-smpa.onrender.com/news/fetch-data',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            url: info.link,
+          }),
+        }
+      );
+      if (response.status === 200) {
+        const article = await response.json();
         setFetchStatus(200);
         setInfo({
-          content: $('body').text(),
+          content: article,
           link: info.link,
         });
       } else {
-        setFetchStatus(404);
+        setFetchStatus(response.status);
       }
     };
 
