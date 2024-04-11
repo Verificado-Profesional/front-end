@@ -1,3 +1,4 @@
+import { getArticle } from '@/services/news';
 import { useEffect, useState, type ChangeEvent } from 'react';
 import { create } from 'zustand';
 
@@ -38,18 +39,7 @@ export const useInfo = ({ isWithLink }: Props) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(
-        'https://verificado-back-end-smpa.onrender.com/news/fetch-data',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            url: info.link,
-          }),
-        }
-      );
+      const response = await getArticle(info.link);
       if (response.status === 200) {
         const article = await response.json();
         setFetchStatus(200);
