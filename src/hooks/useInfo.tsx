@@ -28,6 +28,7 @@ export const useInfoContext = create<InfoContext>((set) => ({
 export const useInfo = ({ isWithLink }: Props) => {
   const { info, setInfo } = useInfoContext();
   const [fetchStatus, setFetchStatus] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     setInfo({
@@ -39,25 +40,30 @@ export const useInfo = ({ isWithLink }: Props) => {
 
   useEffect(() => {
     const fetchData = async () => {
+      setIsLoading(true);
       const response = await getArticle(info.link);
       if (response.status === 200) {
         const article = await response.json();
         setFetchStatus(200);
+        setIsLoading(false);
         setInfo({
           content: article,
           link: info.link,
         });
       } else {
         setFetchStatus(response.status);
+        setIsLoading(false);
       }
     };
 
     if (info.link !== '') {
       fetchData().catch((e) => {
         setFetchStatus(e.status);
+        setIsLoading(false);
       });
     } else {
       setFetchStatus(0);
+      setIsLoading(false);
     }
   }, [info.link]);
 
@@ -79,6 +85,7 @@ export const useInfo = ({ isWithLink }: Props) => {
   };
 
   return {
+    isLoading,
     fetchStatus,
     setFetchStatus,
     handleChange,

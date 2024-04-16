@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import ButtonIcon from './ButtonIcon';
 import { useInfo, useInfoContext } from '@/hooks/useInfo';
+import Loading from './Loading';
 
 export const prerender = false;
 
 export default function Analizar() {
   const [isWithLink, setIsWithLink] = useState(true);
-  const { fetchStatus, handleChange } = useInfo({ isWithLink });
+  const { isLoading, fetchStatus, handleChange } = useInfo({ isWithLink });
   const { setInfo } = useInfoContext();
 
   const handleClick = () => {
@@ -21,7 +22,7 @@ export default function Analizar() {
     <main className='w-full flex flex-col justify-center items-start'>
       <section className="w-full h-screen bg-[url('/assets/Fondo.svg')] bg-fixed bg-auto bg-repeat flex justify-center items-center">
         <article
-          className={`h-4/6 sm:h-3/5 p-5 sm:p-10 aspect-[16/28] sm:aspect-[16/20] md:aspect-[16/16] lg:aspect-[16/12] xl:aspect-[16/10] bg-white rounded-xl flex flex-col justify-between transition-all duration-300`}
+          className={` relative h-4/6 sm:h-3/5 p-5 sm:p-10 aspect-[16/28] sm:aspect-[16/20] md:aspect-[16/16] lg:aspect-[16/12] xl:aspect-[16/10] bg-white rounded-xl flex flex-col justify-between transition-all duration-300`}
         >
           <div className='w-full flex flex-col lg:flex-row justify-between lg:items-center items-start'>
             <h1 className='text-[#04001F] text-4xl font-bold'>
@@ -55,6 +56,11 @@ export default function Analizar() {
               placeholder='Ingresar noticia'
               onChange={handleChange}
             />
+          )}
+          {isLoading && (
+            <div className='scale-[.15] absolute -top-2 right-32'>
+              <Loading />
+            </div>
           )}
           <div className='w-full flex justify-end'>
             <a
