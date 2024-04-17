@@ -29,6 +29,7 @@ export const useInfo = ({ isWithLink }: Props) => {
   const { info, setInfo } = useInfoContext();
   const [fetchStatus, setFetchStatus] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
+  const [search, setSearch] = useState(false);
 
   useEffect(() => {
     setInfo({
@@ -44,28 +45,26 @@ export const useInfo = ({ isWithLink }: Props) => {
       const response = await getArticle(info.link);
       if (response.status === 200) {
         const article = await response.json();
-        setFetchStatus(200);
-        setIsLoading(false);
         setInfo({
           content: article,
           link: info.link,
         });
-      } else {
-        setFetchStatus(response.status);
-        setIsLoading(false);
       }
+      setFetchStatus(response.status);
+      setSearch(false);
+      setIsLoading(false);
     };
 
-    if (info.link !== '') {
+    if (info.link !== '' && search) {
       fetchData().catch((e) => {
         setFetchStatus(e.status);
         setIsLoading(false);
       });
-    } else {
+    } else if (info.link === '') {
       setFetchStatus(0);
       setIsLoading(false);
     }
-  }, [info.link]);
+  }, [search]);
 
   const handleChange = (
     event: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>
@@ -85,9 +84,10 @@ export const useInfo = ({ isWithLink }: Props) => {
   };
 
   return {
-    isLoading,
     fetchStatus,
-    setFetchStatus,
+    isLoading,
     handleChange,
+    setFetchStatus,
+    setSearch,
   };
 };

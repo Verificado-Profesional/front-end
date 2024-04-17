@@ -2,12 +2,15 @@ import { useState } from 'react';
 import ButtonIcon from './ButtonIcon';
 import { useInfo, useInfoContext } from '@/hooks/useInfo';
 import Loading from './Loading';
+import SearchIcon from './icons/SearchIcon';
 
 export const prerender = false;
 
 export default function Analizar() {
   const [isWithLink, setIsWithLink] = useState(true);
-  const { isLoading, fetchStatus, handleChange } = useInfo({ isWithLink });
+  const { isLoading, fetchStatus, handleChange, setSearch } = useInfo({
+    isWithLink,
+  });
   const { setInfo } = useInfoContext();
 
   const handleClick = () => {
@@ -16,6 +19,10 @@ export default function Analizar() {
       content: '',
       link: '',
     });
+  };
+
+  const handleSearch = () => {
+    setSearch(true);
   };
 
   return (
@@ -36,19 +43,27 @@ export default function Analizar() {
             />
           </div>
           {isWithLink ? (
-            <input
-              id='newInput'
-              type='text'
-              placeholder='Ingresar link'
-              className={`${
-                fetchStatus === 200
-                  ? 'border border-green-400'
-                  : fetchStatus === 0
-                  ? ''
-                  : 'border border-red-400'
-              } border rounded-xl border-[#04001F] text-[#04001F] p-4 resize-none outline-none`}
-              onChange={handleChange}
-            />
+            <div className='flex md:flex-row flex-col justify-center gap-4 items-center'>
+              <input
+                id='newInput'
+                type='text'
+                placeholder='Ingresar link'
+                className={`${
+                  fetchStatus === 200
+                    ? 'border border-green-400'
+                    : fetchStatus === 0
+                    ? ''
+                    : 'border border-red-400'
+                } border rounded-xl border-[#04001F] text-[#04001F] p-4 resize-none outline-none w-full md:w-[90%]`}
+                onChange={handleChange}
+              />
+              <figure
+                onClick={handleSearch}
+                className='md:w-auto w-full flex justify-center items-center bg-[#04001F] p-4 rounded-xl cursor-pointer'
+              >
+                <SearchIcon className='w-6 h-6' />
+              </figure>
+            </div>
           ) : (
             <textarea
               id='newArea'
@@ -58,7 +73,7 @@ export default function Analizar() {
             />
           )}
           {isLoading && (
-            <div className='scale-[.15] absolute -top-2 right-32'>
+            <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>
               <Loading />
             </div>
           )}

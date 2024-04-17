@@ -6,11 +6,11 @@ import Loading from './Loading';
 export default function Sintactic() {
   const { info } = useInfoContext();
   useRedirect({ content: info.content });
-  const { isLoading } = useLoading();
+  // const { isLoading } = useLoading();
 
-  if (isLoading) {
-    return <Loading />;
-  }
+  // if (isLoading) {
+  //   return <Loading />;
+  // }
 
   return <div>Sintáctico</div>;
 }
