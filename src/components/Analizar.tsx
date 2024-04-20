@@ -31,7 +31,7 @@ export default function Analizar() {
         <article
           className={` relative h-4/6 sm:h-3/5 p-5 sm:p-10 aspect-[16/28] sm:aspect-[16/20] md:aspect-[16/16] lg:aspect-[16/12] xl:aspect-[16/10] bg-white rounded-xl flex flex-col justify-between transition-all duration-300`}
         >
-          <div className='w-full flex flex-col lg:flex-row justify-between lg:items-center items-start'>
+          <div className='w-full flex flex-col lg:flex-row justify-between lg:items-center items-start gap-4'>
             <h1 className='text-[#04001F] text-4xl font-bold'>
               Ingresar Noticia
             </h1>
