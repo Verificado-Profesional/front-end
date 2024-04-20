@@ -59,7 +59,7 @@ export default function Analizar() {
               />
               <figure
                 onClick={handleSearch}
-                className='md:w-auto w-full flex justify-center items-center bg-[#04001F] p-4 rounded-xl cursor-pointer'
+                className='md:w-auto w-full flex justify-center items-center bg-[#04001F] p-4 rounded-xl cursor-pointer hover:bg-[#04001F]/80'
               >
                 <SearchIcon className='w-6 h-6' />
               </figure>

@@ -63,6 +63,7 @@ export const useInfo = ({ isWithLink }: Props) => {
     } else if (info.link === '') {
       setFetchStatus(0);
       setIsLoading(false);
+      setSearch(false);
     }
   }, [search]);
 
