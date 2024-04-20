@@ -55,17 +55,23 @@ export const useInfo = ({ isWithLink }: Props) => {
       setIsLoading(false);
     };
 
-    if (info.link !== '' && search) {
+    if (isWithLink && info.link !== '' && search) {
       fetchData().catch((e) => {
         setFetchStatus(e.status);
         setIsLoading(false);
       });
-    } else if (info.link === '') {
+    } else if (isWithLink && info.link === '') {
       setFetchStatus(0);
       setIsLoading(false);
       setSearch(false);
     }
   }, [search]);
+
+  useEffect(() => {
+    if (info.content !== '' && (search || isWithLink)) {
+      document.getElementById('analizar')?.click();
+    }
+  }, [info.content, search]);
 
   const handleChange = (
     event: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>

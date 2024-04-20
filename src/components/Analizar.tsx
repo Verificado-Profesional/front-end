@@ -43,27 +43,19 @@ export default function Analizar() {
             />
           </div>
           {isWithLink ? (
-            <div className='flex md:flex-row flex-col justify-center gap-4 items-center'>
-              <input
-                id='newInput'
-                type='text'
-                placeholder='Ingresar link'
-                className={`${
-                  fetchStatus === 200
-                    ? 'border border-green-400'
-                    : fetchStatus === 0
-                    ? ''
-                    : 'border border-red-400'
-                } border rounded-xl border-[#04001F] text-[#04001F] p-4 resize-none outline-none w-full md:w-[90%]`}
-                onChange={handleChange}
-              />
-              <figure
-                onClick={handleSearch}
-                className='md:w-auto w-full flex justify-center items-center bg-[#04001F] p-4 rounded-xl cursor-pointer hover:bg-[#04001F]/80'
-              >
-                <SearchIcon className='w-6 h-6' />
-              </figure>
-            </div>
+            <input
+              id='newInput'
+              type='text'
+              placeholder='Ingresar link'
+              className={`${
+                fetchStatus === 200
+                  ? 'border border-green-400'
+                  : fetchStatus === 0
+                  ? ''
+                  : 'border border-red-400'
+              } border rounded-xl border-[#04001F] text-[#04001F] p-4 resize-none outline-none w-full`}
+              onChange={handleChange}
+            />
           ) : (
             <textarea
               id='newArea'
@@ -77,17 +69,14 @@ export default function Analizar() {
               <Loading />
             </div>
           )}
+          <a id='analizar' href='/analizar/veracidad' className=' hidden'></a>
           <div className='w-full flex justify-end'>
-            <a
-              className={`w-40 px-4 py-2 ${
-                (isWithLink && fetchStatus === 200) || !isWithLink
-                  ? 'bg-[#04001F] hover:bg-[#242844]'
-                  : 'bg-gray-500 pointer-events-none cursor-not-allowed'
-              } rounded-3xl font-semibold flex justify-center items-center transition-all duration-300`}
-              href='/analizar/veracidad'
+            <button
+              onClick={handleSearch}
+              className={`w-40 px-4 py-2 bg-[#04001F] hover:bg-[#242844] rounded-3xl font-semibold flex justify-center items-center transition-all duration-300`}
             >
               Analizar
-            </a>
+            </button>
           </div>
         </article>
       </section>

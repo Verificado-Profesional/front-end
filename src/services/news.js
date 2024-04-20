@@ -10,6 +10,5 @@ export const getArticle = async (url) => {
       url: url,
     }),
   });
-  console.log(response);
   return response;
 };
