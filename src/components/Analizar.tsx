@@ -1,15 +1,18 @@
 import { useState } from 'react';
 import ButtonIcon from './ButtonIcon';
-import { useInfo, useInfoContext } from '@/hooks/useInfo';
+import { useInfo } from '@/hooks/useInfo';
 import Loading from './Loading';
-import SearchIcon from './icons/SearchIcon';
+import { useInfoContext } from '@/contexts/infoContext';
+import useLoading from '@/hooks/useLoading';
 
 export const prerender = false;
 
 export default function Analizar() {
   const [isWithLink, setIsWithLink] = useState(true);
-  const { isLoading, fetchStatus, handleChange, setSearch } = useInfo({
+  const { isLoading, setIsLoading } = useLoading();
+  const { fetchStatus, handleChange, setSearch } = useInfo({
     isWithLink,
+    setIsLoading,
   });
   const { setInfo } = useInfoContext();
 

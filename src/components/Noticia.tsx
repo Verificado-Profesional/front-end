@@ -1,4 +1,4 @@
-import { useInfoContext } from '@/hooks/useInfo';
+import { useInfoContext } from '@/contexts/infoContext';
 import ExternalLinkIcon from './icons/ExternalLinkIcon';
 
 export default function Noticia() {

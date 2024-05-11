@@ -7,8 +7,9 @@ import Button from '../components/Button.astro';
     <h1 class='text-3xl uppercase font-black text-[#92A7FF] mt-10 mb-10'>
       Realizá diferentes análisis
     </h1>
+    <!-- TODO: Modificar diseño -->
     <div
-      class='w-full flex flex-row flex-wrap justify-center lg:justify-between items-start mb-10 gap-6'
+      class='w-full flex flex-row flex-wrap justify-center lg:justify-evenly items-start mb-10 gap-6'
     >
       <article class='flex flex-col justify-between w-1/4 min-w-64 gap-8'>
         <div class='flex flex-col justify-between gap-4 items-center w-full'>
@@ -42,25 +43,6 @@ import Button from '../components/Button.astro';
             algoritmo de análisis de sentimientos. Entrenado con nuestra amplia
             base de datos, identifica si una noticia tiene un enfoque negativo o
             positivo.
-          </p>
-        </div>
-        <Button type='primary' title='Analizar' href='/analizar' />
-      </article>
-      <article class='flex flex-col justify-between w-1/4 min-w-64 gap-8'>
-        <div class='flex flex-col justify-between gap-4 items-center w-full'>
-          <img
-            src='/assets/syntactic.svg'
-            alt='Sintáctico'
-            width='100%'
-            height='auto'
-          />
-          <h2 class='text-xl text-center font-semibold'>Sintáctico</h2>
-          <p class='w-full text-center min-h-72 font-extralight'>
-            Desbloquea el poder de entender el núcleo de cada historia con
-            nuestro avanzado algoritmo de análisis sintáctico. Utilizando la
-            reconocida biblioteca SpaCy, te ofrecemos una visión profunda de la
-            estructura y gramática de cualquier texto, ¡permitiéndote descubrir
-            lo que realmente importa!
           </p>
         </div>
         <Button type='primary' title='Analizar' href='/analizar' />

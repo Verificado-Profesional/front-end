@@ -1,34 +1,21 @@
-import { getArticle } from '@/services/news';
-import { useEffect, useState, type ChangeEvent } from 'react';
-import { create } from 'zustand';
+import { useInfoContext } from '@/contexts/infoContext';
+import { fetchData } from '@/helpers/callService';
+import {
+  useEffect,
+  useState,
+  type ChangeEvent,
+  type Dispatch,
+  type SetStateAction,
+} from 'react';
 
 interface Props {
   isWithLink: boolean;
+  setIsLoading: Dispatch<SetStateAction<boolean>>;
 }
 
-type Info = {
-  content: string;
-  link: string;
-};
-
-type InfoContext = {
-  info: Info;
-  setInfo: (state: Info) => void;
-};
-
-export const useInfoContext = create<InfoContext>((set) => ({
-  info: {
-    content: '',
-    link: '',
-  },
-  setInfo: (state) =>
-    set({ info: { content: state.content, link: state.link } }),
-}));
-
-export const useInfo = ({ isWithLink }: Props) => {
+export const useInfo = ({ isWithLink, setIsLoading }: Props) => {
   const { info, setInfo } = useInfoContext();
   const [fetchStatus, setFetchStatus] = useState(0);
-  const [isLoading, setIsLoading] = useState(false);
   const [search, setSearch] = useState(false);
 
   useEffect(() => {
@@ -40,26 +27,23 @@ export const useInfo = ({ isWithLink }: Props) => {
   }, []);
 
   useEffect(() => {
-    const fetchData = async () => {
-      setIsLoading(true);
-      const response = await getArticle(info.link);
-      if (response.status === 200) {
-        const article = await response.json();
-        setInfo({
-          content: article,
-          link: info.link,
-        });
-      }
-      setFetchStatus(response.status);
-      setSearch(false);
-      setIsLoading(false);
-    };
-
     if (isWithLink && info.link !== '' && search) {
-      fetchData().catch((e) => {
-        setFetchStatus(e.status);
-        setIsLoading(false);
-      });
+      setIsLoading(true);
+      fetchData(info.link)
+        .then((resp) => {
+          setInfo({
+            content: resp.content,
+            link: info.link,
+          });
+          setFetchStatus(resp.status);
+        })
+        .catch((e) => {
+          setFetchStatus(e.status);
+        })
+        .finally(() => {
+          setIsLoading(false);
+          setSearch(false);
+        });
     } else if (isWithLink && info.link === '') {
       setFetchStatus(0);
       setIsLoading(false);
@@ -92,7 +76,6 @@ export const useInfo = ({ isWithLink }: Props) => {
 
   return {
     fetchStatus,
-    isLoading,
     handleChange,
     setFetchStatus,
     setSearch,

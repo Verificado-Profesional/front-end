@@ -24,12 +24,6 @@ export default function AnalisisHeader({
             href={'sentimiento'}
             isSelected={pathname === 'sentimiento'}
           />
-          <HeaderButton
-            title='Sintáctico'
-            icon={<TextScanIcon className=' w-8 sm:w-12' />}
-            href={'sintactico'}
-            isSelected={pathname === 'sintactico'}
-          />
         </ul>
       </nav>
     </header>
