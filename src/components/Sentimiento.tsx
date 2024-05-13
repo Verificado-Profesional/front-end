@@ -9,6 +9,7 @@ import {
   getSentimentMessages,
   getSentimentResult,
 } from '@/helpers/classificationMessages';
+import { Classification } from '@/types/types';
 
 export default function Sentiment() {
   const { info } = useInfoContext();
@@ -19,7 +20,7 @@ export default function Sentiment() {
   const { classification, trueProbability, falseProbability } =
     useClassification({
       content: info.content,
-      classificationType: 'sentiment',
+      classificationType: Classification.sentiment,
       setIsLoading,
     });
 

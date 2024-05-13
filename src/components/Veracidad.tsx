@@ -9,6 +9,7 @@ import {
   getVeracityMessages,
   getVeracityResult,
 } from '@/helpers/classificationMessages';
+import { Classification } from '@/types/types';
 
 export default function Veracity() {
   const { info } = useInfoContext();
@@ -19,7 +20,7 @@ export default function Veracity() {
   const { classification, trueProbability, falseProbability } =
     useClassification({
       content: info.content,
-      classificationType: 'veracity',
+      classificationType: Classification.veracity,
       setIsLoading,
     });
 

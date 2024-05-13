@@ -1,9 +1,10 @@
 import { getClassification } from '@/helpers/callService';
+import type { Classification } from '@/types/types';
 import { useEffect, useState, type Dispatch, type SetStateAction } from 'react';
 
 interface Props {
   content: string;
-  classificationType: string;
+  classificationType: Classification;
   setIsLoading: Dispatch<SetStateAction<boolean>>;
 }
 

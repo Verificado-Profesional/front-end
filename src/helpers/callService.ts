@@ -1,16 +1,11 @@
 import { callService } from '@/services/callService';
+import type { Classification } from '@/types/types';
 
 const endpoints = {
   news: 'news/fetch-data',
   veracity: 'veracity',
   sentiment: 'sentiment',
 };
-
-enum Classification {
-  news = 'news',
-  veracity = 'veracity',
-  sentiment = 'sentiment',
-}
 
 export const fetchData = async (link: string) => {
   const body = JSON.stringify({
