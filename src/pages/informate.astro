@@ -2,19 +2,77 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
+<!-- TODO: Terminar diseño y hacer responsive -->
 <Layout title='Factify' pathname='/informate'>
   <main class='w-full flex flex-col justify-center items-start'>
-    <section
-      class="w-full lg:h-screen bg-[url('/assets/Fondo.svg')] bg-fixed bg-auto bg-repeat flex justify-center items-center"
-    >
+    <section class='w-full bg-fixed bg-auto bg-repeat grid place-items-center'>
       <div
-        class='w-4/5 lg:h-full flex flex-col justify-center items-start mt-20 lg:mt-0 mb-20 lg:mb-0'
+        class='w-4/5 flex flex-col justify-center items-start mt-32 mb-20 gap-5'
       >
-        <h1 class="text-lg lg:text-xl font-bold text-pretty">Navega Seguro: Tu Guía para Combatir la Desinformación</h1>
-        <h3 class="text-lg lg:text-xl font-extralight">
-          ¡Aprende a protegerte de las noticias falsas y la desinformación en el
-          mundo digital!
-        </h3>
+        <div class='w-full flex flex-col justify-center items-start'>
+          <h1 class='text-3xl uppercase font-black text-[#92A7FF]'>
+            Tu Guía para Combatir la Desinformación
+          </h1>
+          <h2 class='text-xl text-left font-semibold'>
+            ¡Aprende a protegerte de las noticias falsas y la desinformación en
+            el mundo digital!
+          </h2>
+        </div>
+        <div class='grid grid-cols-5 gap-5'>
+          <p
+            class='text-left font-extralight col-start-1 col-end-6 rounded-3xl flex justify-start items-center mt-4 mb-4'
+          >
+            ¡Hola! En este mundo digital tan rápido, la información está por
+            todas partes. Pero, ¿sabías que también hay mucha desinformación?
+            Las noticias falsas y el contenido manipulado pueden confundirnos y
+            hasta dañar nuestra tranquilidad. Esta guía está aquí para ayudarte
+            a navegar de forma segura y responsable, protegiéndote de la
+            desinformación y promoviendo el consumo de contenido veraz y de
+            calidad.
+          </p>
+          <p
+            class='col-start-1 col-end-4 rounded-3xl text-left font-extralight flex border min-h-36 border-[#92A7FF] bg-[var(--color-primary)] justify-center items-center p-4 bg-blue-400'
+          >
+            Verifica antes de compartir: Asegúrate de investigar bien la fuente,
+            analiza el contenido, compáralo con otras fuentes, revisa la fecha y
+            pregunta a los expertos.
+          </p>
+          <p
+            class='col-start-2 col-end-6 rounded-3xl text-left font-extralight flex border min-h-36 border-[#92A7FF] bg-[var(--color-primary)] justify-center items-center p-4 bg-blue-400'
+          >
+            Detecta noticias falsas: Mira si los títulos son exagerados,
+            verifica si hay fuentes confiables, cuidado con los errores
+            gramaticales, las imágenes manipuladas y si viene de cuentas
+            desconocidas.
+          </p>
+          <p
+            class='col-start-1 col-end-4 rounded-3xl text-left font-extralight flex border min-h-36 border-[#92A7FF] bg-[var(--color-primary)] justify-center items-center p-4 bg-blue-400'
+          >
+            Enfrenta enfoques negativos: Es importante cuidar nuestra mente,
+            limita la exposición a información negativa, busca cosas positivas,
+            rodéate de gente optimista y piensa siempre con sentido crítico.
+          </p>
+          <p
+            class='col-start-2 col-end-6 rounded-3xl text-left font-extralight flex border min-h-36 border-[#92A7FF] bg-[var(--color-primary)] justify-center items-center p-4 bg-blue-400'
+          >
+            Reenvía con responsabilidad: No compartas sin verificar, añade
+            contexto, evita las cadenas de mensajes y sé consciente de lo que
+            compartes.
+          </p>
+          <p
+            class='col-start-1 col-end-4 rounded-3xl text-left font-extralight flex border min-h-36 border-[#92A7FF] bg-[var(--color-primary)] justify-center items-center p-4 bg-blue-400'
+          >
+            Refuerza tu protección: Sigue a expertos de confianza, utiliza
+            herramientas de verificación, mantente informado sobre las tácticas
+            de desinformación, habla con otros y sé crítico con lo que lees.
+          </p>
+          <p
+            class='text-left font-extralight col-start-1 col-end-6 rounded-3xl flex justify-start items-center mt-4 mb-4'
+          >
+            ¡Recuerda que la información que compartes y consumes importa! ¡Sé
+            parte del cambio y contribuye a una sociedad mejor informada!
+          </p>
+        </div>
       </div>
     </section>
   </main>
