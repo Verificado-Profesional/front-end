@@ -37,10 +37,18 @@ const { pathname } = Astro.props;
           <li
             class:list={[
               'py-1 w-32',
-              { 'footer-selected': pathname === '/estadisticas' },
+              { 'footer-selected': pathname === '/tendencias' },
             ]}
           >
-            <a href='/estadisticas'>Estadísticas</a>
+            <a href='/tendencias'>Tendencias</a>
+          </li>
+          <li
+            class:list={[
+              'py-1 w-32',
+              { 'footer-selected': pathname === '/informate' },
+            ]}
+          >
+            <a href='/informate'>Informate</a>
           </li>
         </ul>
       </nav>

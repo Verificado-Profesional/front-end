@@ -39,27 +39,34 @@ export default function Header({ pathname }: Props) {
             openMenu ? 'translate-x-full' : 'translate-x-0'
           }`}
         >
-          <ul className='flex flex-col bg-[#04001F] md:bg-transparent w-full md:flex-row md:gap-16'>
+          <ul className='flex flex-col bg-[#04001F] md:bg-transparent w-full md:flex-row md:gap-10'>
             <li
               className={`${
                 pathname === '/' ? 'selected' : ''
-              } py-3 md:py-1 lg:w-32 md:w-28 md:text-md text-center transition-all duration-300 ease-in-out`}
+              } py-3 md:py-1 lg:w-32 md:w-24 text-center md:text-sm lg:text-base transition-all duration-300 ease-in-out`}
             >
               <a href='/'>Inicio</a>
             </li>
             <li
               className={`${
                 pathname === '/analizar' ? 'selected' : ''
-              } py-3 md:py-1 lg:w-32 md:w-28 md:text-md text-center transition-all duration-300 ease-in-out`}
+              } py-3 md:py-1 lg:w-32 md:w-24 text-center md:text-sm lg:text-base transition-all duration-300 ease-in-out`}
             >
               <a href='/analizar'>Analizar</a>
             </li>
             <li
               className={`${
-                pathname === '/estadisticas' ? 'selected' : ''
-              } py-3 md:py-1 lg:w-32 md:w-28 md:text-md text-center transition-all duration-300 ease-in-out`}
+                pathname === '/tendencias' ? 'selected' : ''
+              } py-3 md:py-1 lg:w-32 md:w-24 text-center md:text-sm lg:text-base transition-all duration-300 ease-in-out`}
             >
-              <a href='/estadisticas'>Estadísticas</a>
+              <a href='/tendencias'>Tendencias</a>
+            </li>
+            <li
+              className={`${
+                pathname === '/informate' ? 'selected' : ''
+              } py-3 md:py-1 lg:w-32 md:w-24 text-center md:text-sm lg:text-base transition-all duration-300 ease-in-out`}
+            >
+              <a href='/informate'>Informate</a>
             </li>
           </ul>
         </nav>
