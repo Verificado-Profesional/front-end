@@ -5,6 +5,10 @@ import { useInfoContext } from '@/contexts/infoContext';
 import useClassification from '@/hooks/useClassification';
 import useLoading from '@/hooks/useLoading';
 import Loading from './Loading';
+import {
+  getVeracityMessages,
+  getVeracityResult,
+} from '@/helpers/classificationMessages';
 
 export default function Veracity() {
   const { info } = useInfoContext();
@@ -35,6 +39,14 @@ export default function Veracity() {
       <Noticia />
       <Resultado
         classification={classification}
+        classificationResult={getVeracityResult(
+          classification,
+          classification ? trueProbability : falseProbability
+        )}
+        classificationText={getVeracityMessages(
+          classification,
+          classification ? trueProbability : falseProbability
+        )}
         trueProbability={trueProbability}
         falseProbability={falseProbability}
       />

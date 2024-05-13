@@ -6,7 +6,13 @@ const endpoints = {
   sentiment: 'sentiment',
 };
 
-export const fetchData = async (link) => {
+enum Classification {
+  news = 'news',
+  veracity = 'veracity',
+  sentiment = 'sentiment',
+}
+
+export const fetchData = async (link: string) => {
   const body = JSON.stringify({
     url: link,
   });
@@ -18,7 +24,10 @@ export const fetchData = async (link) => {
   };
 };
 
-export const getClassification = async (classification, content) => {
+export const getClassification = async (
+  classification: Classification,
+  content: string
+) => {
   const body = JSON.stringify({
     text: content,
   });

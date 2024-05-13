@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ButtonIcon from './ButtonIcon';
 import { useInfo } from '@/hooks/useInfo';
 import Loading from './Loading';
@@ -10,7 +10,8 @@ export const prerender = false;
 export default function Analizar() {
   const [isWithLink, setIsWithLink] = useState(true);
   const { isLoading, setIsLoading } = useLoading();
-  const { fetchStatus, handleChange, setSearch } = useInfo({
+  const { info } = useInfoContext();
+  const { fetchStatus, search, handleChange, setSearch } = useInfo({
     isWithLink,
     setIsLoading,
   });
@@ -72,14 +73,24 @@ export default function Analizar() {
               <Loading />
             </div>
           )}
-          <a id='analizar' href='/analizar/veracidad' className=' hidden'></a>
-          <div className='w-full flex justify-end'>
-            <button
-              onClick={handleSearch}
-              className={`w-40 px-4 py-2 bg-[#04001F] hover:bg-[#242844] rounded-3xl font-semibold flex justify-center items-center transition-all duration-300`}
-            >
-              Analizar
-            </button>
+          <div className='w-full flex justify-end gap-5'>
+            {isWithLink && info.content === '' && (
+              <button
+                onClick={handleSearch}
+                className={`w-40 px-4 py-2 bg-[#04001F] hover:bg-[#242844] rounded-3xl font-semibold flex justify-center items-center transition-all duration-300`}
+              >
+                Verificar link
+              </button>
+            )}
+            {(!isWithLink || (isWithLink && info.content !== '')) && (
+              <a
+                id='analizar'
+                href='/analizar/veracidad'
+                className='w-40 px-4 py-2 bg-[#04001F] hover:bg-[#242844] rounded-3xl font-semibold flex justify-center items-center transition-all duration-300'
+              >
+                Analizar
+              </a>
+            )}
           </div>
         </article>
       </section>

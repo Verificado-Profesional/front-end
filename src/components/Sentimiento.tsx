@@ -5,6 +5,10 @@ import { useInfoContext } from '@/contexts/infoContext';
 import useLoading from '@/hooks/useLoading';
 import useClassification from '@/hooks/useClassification';
 import Loading from './Loading';
+import {
+  getSentimentMessages,
+  getSentimentResult,
+} from '@/helpers/classificationMessages';
 
 export default function Sentiment() {
   const { info } = useInfoContext();
@@ -35,6 +39,14 @@ export default function Sentiment() {
       <Noticia />
       <Resultado
         classification={classification}
+        classificationResult={getSentimentResult(
+          classification,
+          classification ? trueProbability : falseProbability
+        )}
+        classificationText={getSentimentMessages(
+          classification,
+          classification ? trueProbability : falseProbability
+        )}
         trueProbability={trueProbability}
         falseProbability={falseProbability}
       />

@@ -51,12 +51,6 @@ export const useInfo = ({ isWithLink, setIsLoading }: Props) => {
     }
   }, [search]);
 
-  useEffect(() => {
-    if (info.content !== '' && (search || isWithLink)) {
-      document.getElementById('analizar')?.click();
-    }
-  }, [info.content, search]);
-
   const handleChange = (
     event: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>
   ) => {
@@ -76,6 +70,7 @@ export const useInfo = ({ isWithLink, setIsLoading }: Props) => {
 
   return {
     fetchStatus,
+    search,
     handleChange,
     setFetchStatus,
     setSearch,
