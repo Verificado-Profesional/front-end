@@ -22,7 +22,7 @@ export default function Card({
     <div
       className={`${className} transition-all duration-300 group flex flex-col ${
         selected ? 'cursor-auto' : 'cursor-pointer'
-      } items-center justify-center gap-5 rounded-3xl border-2 border-white bg-[#04001f]/50 p-5 backdrop-blur-[2px]`}
+      } items-center justify-between gap-5 rounded-3xl border-2 border-white bg-[#04001f]/50 p-5 backdrop-blur-[2px]`}
       onClick={onClick}
     >
       <div className='flex flex-col justify-center items-center'>
