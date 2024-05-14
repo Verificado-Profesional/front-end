@@ -1,5 +1,6 @@
 import HeaderButton from './HeaderButton';
 import MasksIcon from './icons/MasksIcon';
+import SimilIcon from './icons/SimilIcon';
 import TargetIcon from './icons/TargetIcon';
 import TextScanIcon from './icons/TextScanIcon';
 
@@ -23,6 +24,12 @@ export default function AnalisisHeader({
             icon={<MasksIcon className=' w-8 sm:w-12' />}
             href={'sentimiento'}
             isSelected={pathname === 'sentimiento'}
+          />
+          <HeaderButton
+            title='Similaridad'
+            icon={<SimilIcon className=' w-8 sm:w-12' />}
+            href={'similaridad'}
+            isSelected={pathname === 'similaridad'}
           />
         </ul>
       </nav>

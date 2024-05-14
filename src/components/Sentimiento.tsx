@@ -10,6 +10,7 @@ import {
   getSentimentResult,
 } from '@/helpers/classificationMessages';
 import { Classification } from '@/types/types';
+import Botonera from './Botonera';
 
 export default function Sentiment() {
   const { info } = useInfoContext();
@@ -38,19 +39,22 @@ export default function Sentiment() {
   return (
     <div className='w-4/5 h-auto sm:h-4/5 flex flex-col-reverse md:flex-row items-start justify-between py-10 gap-5'>
       <Noticia />
-      <Resultado
-        classification={classification}
-        classificationResult={getSentimentResult(
-          classification,
-          classification ? trueProbability : falseProbability
-        )}
-        classificationText={getSentimentMessages(
-          classification,
-          classification ? trueProbability : falseProbability
-        )}
-        trueProbability={trueProbability}
-        falseProbability={falseProbability}
-      />
+      <div className='md:w-2/6 w-full flex flex-col gap-5'>
+        <Resultado
+          classification={classification}
+          classificationResult={getSentimentResult(
+            classification,
+            classification ? trueProbability : falseProbability
+          )}
+          classificationText={getSentimentMessages(
+            classification,
+            classification ? trueProbability : falseProbability
+          )}
+          trueProbability={trueProbability}
+          falseProbability={falseProbability}
+        />
+        <Botonera />
+      </div>
     </div>
   );
 }

@@ -18,7 +18,7 @@ export default function Resultado({
   };
   return (
     <article
-      className={`w-full md:w-2/6 h-96 ${
+      className={`w-full h-96 ${
         classification ? 'bg-[var(--bg-green)]' : 'bg-[var(--bg-red)]'
       } p-7 rounded-xl flex flex-col gap-10`}
     >
