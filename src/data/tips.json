@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "title": "Verificá antes de compartir",
+    "description": "Asegúrate de investigar bien la fuente, analiza el contenido, compáralo con otras fuentes, revisa la fecha y pregunta a los expertos. Recuerda que la desinformación puede tener consecuencias graves, como causar pánico o desinformar a la gente en temas importantes como la salud pública o la política."
+  },
+  {
+    "id": 2,
+    "title": "Detecta noticias falsas",
+    "description": "Mira si los títulos son exagerados, verifica si hay fuentes confiables, cuidado con los errores gramaticales, las imágenes manipuladas y si viene de cuentas desconocidas. Las noticias falsas a menudo se comparten para influir en opiniones o causar división en la sociedad. Mantente alerta y cuestiona la información antes de compartirla."
+  },
+  {
+    "id": 3,
+    "title": "Enfrenta enfoques negativos",
+    "description": "Es importante cuidar nuestra mente, limita la exposición a información negativa, busca cosas positivas, rodéate de gente optimista y piensa siempre con sentido crítico. La exposición constante a noticias negativas puede afectar nuestra salud mental y bienestar general. Prioriza el consumo de contenido que te motive y te haga sentir bien."
+  },
+  {
+    "id": 4,
+    "title": "Reenvía con responsabilidad",
+    "description": "No compartas sin verificar, añade contexto, evita las cadenas de mensajes y sé consciente de lo que compartes. La difusión de información errónea puede causar confusión y daño a otras personas. Antes de compartir cualquier cosa, verifica su veracidad y considera el impacto que puede tener en quienes la reciben."
+  },
+  {
+    "id": 5,
+    "title": "Refuerza tu protección",
+    "description": "Sigue a expertos de confianza, utiliza herramientas de verificación, mantente informado sobre las tácticas de desinformación, habla con otros y sé crítico con lo que lees. La lucha contra la desinformación es responsabilidad de todos. Mantente educado y comprometido con la verdad, y ayuda a otros a hacer lo mismo."
+  }
+]
