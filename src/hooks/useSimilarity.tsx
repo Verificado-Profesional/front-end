@@ -38,7 +38,7 @@ export default function useSimilarity({
       setIsLoading(true);
       getSimilarity(content)
         .then((resp) => {
-          setTopResults(resp.data.topResults);
+          setTopResults(resp.data.top_results);
         })
         .catch((e) => {
           setTopResults([]);

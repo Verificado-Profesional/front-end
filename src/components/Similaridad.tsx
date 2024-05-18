@@ -2,7 +2,7 @@ import useRedirect from '@/hooks/useRedirect';
 import { useInfoContext } from '@/contexts/infoContext';
 import useLoading from '@/hooks/useLoading';
 import Loading from './Loading';
-import Botonera from './Botonera';
+import BackButton from './BackButton';
 import Similares from './Similares';
 import useSimilarity from '@/hooks/useSimilarity';
 
@@ -26,7 +26,11 @@ export default function Similarity() {
     <div className='w-4/5 h-auto sm:h-4/5 flex flex-col-reverse md:flex-row items-center justify-center py-10 gap-5'>
       <div className='w-full flex flex-col gap-5'>
         <Similares topResults={topResults} />
-        <Botonera />
+        <div className='w-full flex justify-end'>
+          <span className='w-full md:w-2/6'>
+            <BackButton />
+          </span>
+        </div>
       </div>
     </div>
   );

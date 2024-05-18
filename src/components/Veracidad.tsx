@@ -10,7 +10,7 @@ import {
   getVeracityResult,
 } from '@/helpers/classificationMessages';
 import { Classification } from '@/types/types';
-import Botonera from './Botonera';
+import BackButton from './BackButton';
 
 export default function Veracity() {
   const { info } = useInfoContext();
@@ -53,7 +53,7 @@ export default function Veracity() {
           trueProbability={trueProbability}
           falseProbability={falseProbability}
         />
-        <Botonera />
+        <BackButton />
       </div>
     </div>
   );
