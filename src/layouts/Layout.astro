@@ -24,20 +24,11 @@ const { title, pathname }: Props = Astro.props;
 
     <link rel='preconnect' href='https://fonts.googleapis.com' />
     <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
-
     <link
-      rel='stylesheet'
       href='https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap'
-      media='print'
-      onload='this.media="all"'
-    />
-
-    <link
       rel='stylesheet'
-      href='https://fonts.googleapis.com/css2?family=Titan+One&display=swap'
-      media='print'
-      onload='this.media="all"'
     />
+    <link href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap" rel="stylesheet">
   </head>
   <body>
     <Header client:load pathname={pathname} />
@@ -49,11 +40,11 @@ const { title, pathname }: Props = Astro.props;
 <style is:global>
   :root {
     --color-primary: #04001f;
-    --text-green: #00c66a;
-    --text-red: #f24a4a;
-    --text-yellow: #c39a1c;
+    --text-green: #00C66A;
+    --text-red: #F24A4A;
+    --text-yellow: #C39A1C;
     --bg-green: #e5faf1;
-    --bg-red: #fae6e8;
+    --bg-red: #FAE6E8;
     --bg-yellow: #fff9e5;
   }
   html {
