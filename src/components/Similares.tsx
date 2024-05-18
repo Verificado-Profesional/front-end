@@ -1,11 +1,10 @@
-import type { TopResult } from '@/types/types';
+// Components
 import ResultadoSimilar from './ResultadoSimilar';
 
-interface Props {
-  topResults: Array<TopResult>;
-}
+// Types
+import type { SimilaresProps } from '@/types/types';
 
-export default function Similares({ topResults }: Props) {
+export default function Similares({ topResults }: SimilaresProps) {
   return (
     <div className='w-full h-96 flex flex-col justify-start items-start gap-5'>
       <div className='w-full h-96 max-h-96 overflow-x-hidden gap-5 p-5 overflow-y-auto flex flex-col justify-start items-center bg-[var(--color-primary)]/50 backdrop-blur-[4px] border border-white rounded-3xl'>

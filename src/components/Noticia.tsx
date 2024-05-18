@@ -1,4 +1,7 @@
+// Context
 import { useInfoContext } from '@/contexts/infoContext';
+
+// Icons
 import ExternalLinkIcon from './icons/ExternalLinkIcon';
 
 export default function Noticia() {

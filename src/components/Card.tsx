@@ -1,14 +1,9 @@
+// Icons
 import BulbFilledIcon from './icons/BulbFilledIcon';
 import BulbIcon from './icons/BulbIcon';
 
-interface Props {
-  className?: string;
-  id: number;
-  title: string;
-  description: string;
-  selected: boolean;
-  onClick: () => void;
-}
+// Types
+import type { CardProps } from '@/types/types';
 
 export default function Card({
   className,
@@ -17,7 +12,7 @@ export default function Card({
   description,
   selected,
   onClick,
-}: Props) {
+}: CardProps) {
   return (
     <div
       className={`${className} transition-all duration-300 group flex flex-col ${

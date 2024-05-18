@@ -1,10 +1,15 @@
-import useRedirect from '@/hooks/useRedirect';
+// Contexts
 import { useInfoContext } from '@/contexts/infoContext';
+
+// Custom hooks
 import useLoading from '@/hooks/useLoading';
-import Loading from './Loading';
-import BackButton from './BackButton';
-import Similares from './Similares';
+import useRedirect from '@/hooks/useRedirect';
 import useSimilarity from '@/hooks/useSimilarity';
+
+// Components
+import BackButton from './BackButton';
+import Loading from './Loading';
+import Similares from './Similares';
 
 export default function Similarity() {
   const { info } = useInfoContext();

@@ -1,8 +1,10 @@
+// Components
 import HeaderButton from './HeaderButton';
+
+// Icons
 import MasksIcon from './icons/MasksIcon';
 import SimilIcon from './icons/SimilIcon';
 import TargetIcon from './icons/TargetIcon';
-import TextScanIcon from './icons/TextScanIcon';
 
 export default function AnalisisHeader({
   pathname,

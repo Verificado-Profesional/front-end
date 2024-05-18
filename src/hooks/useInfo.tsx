@@ -1,19 +1,15 @@
+import { useEffect, useState, type ChangeEvent } from 'react';
+
+// Context
 import { useInfoContext } from '@/contexts/infoContext';
+
+// Services
 import { fetchData } from '@/helpers/callService';
-import {
-  useEffect,
-  useState,
-  type ChangeEvent,
-  type Dispatch,
-  type SetStateAction,
-} from 'react';
 
-interface Props {
-  isWithLink: boolean;
-  setIsLoading: Dispatch<SetStateAction<boolean>>;
-}
+// Types
+import type { InfoProps } from '@/types/types';
 
-export const useInfo = ({ isWithLink, setIsLoading }: Props) => {
+export const useInfo = ({ isWithLink, setIsLoading }: InfoProps) => {
   const { info, setInfo } = useInfoContext();
   const [fetchStatus, setFetchStatus] = useState(0);
   const [search, setSearch] = useState(false);

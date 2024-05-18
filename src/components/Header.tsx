@@ -1,15 +1,17 @@
 import { useState } from 'react';
+
+// Icons
 import HamburguerIcon from './icons/HamburguerIcon';
 
+// Styles
 import '@/styles/styles.css';
+
+// Types
+import type { HeaderProps } from '@/types/types';
 
 export const prerender = false;
 
-interface Props {
-  pathname: string;
-}
-
-export default function Header({ pathname }: Props) {
+export default function Header({ pathname }: HeaderProps) {
   const [openMenu, setOpenMenu] = useState(false);
 
   const handleClick = () => {

@@ -1,3 +1,4 @@
+// Styles
 import styles from '@/styles/Sello.module.css';
 
 export default function Sello() {

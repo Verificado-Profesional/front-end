@@ -1,12 +1,8 @@
+// Helpers
 import { formatNumber } from '@/helpers/classificationMessages';
 
-interface Props {
-  classification: boolean;
-  classificationResult: string | undefined;
-  classificationText: string | undefined;
-  trueProbability: number;
-  falseProbability: number;
-}
+// Types
+import type { ResultadoProps } from '@/types/types';
 
 export default function Resultado({
   classification,
@@ -14,7 +10,7 @@ export default function Resultado({
   classificationText,
   trueProbability,
   falseProbability,
-}: Props) {
+}: ResultadoProps) {
   return (
     <article
       className={`w-full h-96 ${

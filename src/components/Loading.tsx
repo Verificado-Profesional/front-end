@@ -1,4 +1,7 @@
+// Components
 import Sello from './Sello';
+
+// Styles
 import '@/styles/styles.css';
 
 export default function Loading() {

@@ -1,13 +1,12 @@
+// Styles
 import styles from './HamburguerIcon.module.css';
+
+// Types
+import type { HamburguerIconProps } from '@/types/types';
 
 export const prerender = false;
 
-interface Props {
-  isSelected: boolean;
-  onClick: () => void;
-}
-
-const HamburguerIcon = ({ isSelected, onClick }: Props) => {
+const HamburguerIcon = ({ isSelected, onClick }: HamburguerIconProps) => {
   return (
     <section className={styles.section}>
       <div className={styles.container} onClick={onClick}>

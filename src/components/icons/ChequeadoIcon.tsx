@@ -2,11 +2,11 @@ export default function ChequeadoIcon({ className }: { className?: string }) {
   return (
     <svg viewBox='0 0 74 64' className={`${className}`}>
       <g
+        fill='none'
+        fillRule='evenodd'
         id='Style-Guide'
         stroke='none'
         strokeWidth='1'
-        fill='none'
-        fillRule='evenodd'
       >
         <g id='style-guide' transform='translate(-218.000000, -314.000000)'>
           <g

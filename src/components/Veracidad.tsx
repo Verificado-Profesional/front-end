@@ -1,16 +1,25 @@
-import useRedirect from '@/hooks/useRedirect';
+// Context
+import { useInfoContext } from '@/contexts/infoContext';
+
+// Components
+import BackButton from './BackButton';
+import Loading from './Loading';
 import Noticia from './Noticia';
 import Resultado from './Resultado';
-import { useInfoContext } from '@/contexts/infoContext';
+
+// Custom hooks
 import useClassification from '@/hooks/useClassification';
 import useLoading from '@/hooks/useLoading';
-import Loading from './Loading';
+import useRedirect from '@/hooks/useRedirect';
+
+// Helpers
 import {
   getVeracityMessages,
   getVeracityResult,
 } from '@/helpers/classificationMessages';
+
+// Types
 import { Classification } from '@/types/types';
-import BackButton from './BackButton';
 
 export default function Veracity() {
   const { info } = useInfoContext();

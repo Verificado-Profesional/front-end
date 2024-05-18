@@ -1,16 +1,25 @@
+// Context
+import { useInfoContext } from '@/contexts/infoContext';
+
+// Custom hooks
+import useClassification from '@/hooks/useClassification';
+import useLoading from '@/hooks/useLoading';
 import useRedirect from '@/hooks/useRedirect';
+
+// Components
+import BackButton from './BackButton';
+import Loading from './Loading';
 import Noticia from './Noticia';
 import Resultado from './Resultado';
-import { useInfoContext } from '@/contexts/infoContext';
-import useLoading from '@/hooks/useLoading';
-import useClassification from '@/hooks/useClassification';
-import Loading from './Loading';
+
+// Helpers
 import {
   getSentimentMessages,
   getSentimentResult,
 } from '@/helpers/classificationMessages';
+
+// Types
 import { Classification } from '@/types/types';
-import BackButton from './BackButton';
 
 export default function Sentiment() {
   const { info } = useInfoContext();

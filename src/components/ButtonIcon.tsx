@@ -1,19 +1,16 @@
-import TextIcon from './icons/TextIcon';
+// Icons
 import LinkIcon from './icons/LinkIcon';
+import TextIcon from './icons/TextIcon';
 
-interface Props {
-  onClick: () => void;
-  icon: string;
-  title: string;
-  className?: string;
-}
+// Types
+import type { ButtonIconProps } from '@/types/types';
 
 export default function ButtonIcon({
   onClick,
   icon,
   title,
   className = '',
-}: Props) {
+}: ButtonIconProps) {
   return (
     <button onClick={onClick} className={className}>
       {title}

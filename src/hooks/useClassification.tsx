@@ -1,24 +1,19 @@
+import { useEffect, useState } from 'react';
+
+// Helpers
 import { getClassification } from '@/helpers/callService';
-import type { Classification } from '@/types/types';
-import { useEffect, useState, type Dispatch, type SetStateAction } from 'react';
 
-interface Props {
-  content: string;
-  classificationType: Classification;
-  setIsLoading: Dispatch<SetStateAction<boolean>>;
-}
-
-interface Classifications {
-  classification: boolean;
-  trueProbability: number;
-  falseProbability: number;
-}
+// Types
+import type {
+  ClassificationProps,
+  ClassificationsResponse,
+} from '@/types/types';
 
 export default function useClassification({
   content,
   classificationType,
   setIsLoading,
-}: Props): Classifications {
+}: ClassificationProps): ClassificationsResponse {
   const [classification, setClassification] = useState(false);
   const [trueProbability, setTrueProbability] = useState(0);
   const [falseProbability, setFalseProbability] = useState(0);

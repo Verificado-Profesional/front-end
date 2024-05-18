@@ -1,5 +1,9 @@
 import { useState } from 'react';
+
+// Components
 import Card from './Card';
+
+// Data
 import tips from '@/data/tips.json';
 
 export default function Inform() {

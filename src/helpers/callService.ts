@@ -1,4 +1,7 @@
+// Services
 import { callService } from '@/services/callService';
+
+// Types
 import type { Classification } from '@/types/types';
 
 const endpoints = {

@@ -1,13 +1,14 @@
-import type { TopResult } from '@/types/types';
+// Icons
 import ChequeadoIcon from './icons/ChequeadoIcon';
 import GoogleIcon from './icons/GoogleIcon';
+
+// Helpers
 import { formatNumber } from '@/helpers/classificationMessages';
 
-interface Props {
-  resultado: TopResult;
-}
+// Types
+import type { ResultadoSimilarProps } from '@/types/types';
 
-export default function ResultadoSimilar({ resultado }: Props) {
+export default function ResultadoSimilar({ resultado }: ResultadoSimilarProps) {
   return (
     <a
       className='cursor-pointer w-full max-h-60 md:min-h-32 md:max-h-32 rounded-xl flex flex-col md:flex-row relative'
