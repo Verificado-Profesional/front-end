@@ -1,5 +1,5 @@
-import TextIcon from './icons/TextIcon.astro';
-import LinkIcon from './icons/LinkIcon.astro';
+import TextIcon from './icons/TextIcon';
+import LinkIcon from './icons/LinkIcon';
 
 interface Props {
   onClick: () => void;
