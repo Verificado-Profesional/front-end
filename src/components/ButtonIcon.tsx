@@ -1,4 +1,5 @@
-import type { ReactNode } from 'react';
+import LinkIcon from './icons/LinkIcon';
+import TextIcon from './icons/TextIcon';
 
 interface Props {
   onClick: () => void;
@@ -16,7 +17,7 @@ export default function ButtonIcon({
   return (
     <button onClick={onClick} className={className}>
       {title}
-      <img src={`/assets/icons/${icon}.svg`} alt='icon' />
+      {icon === 'TextIcon' ? <TextIcon /> : <LinkIcon />}
     </button>
   );
 }
