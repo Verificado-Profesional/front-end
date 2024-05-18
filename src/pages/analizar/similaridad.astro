@@ -1,8 +1,11 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import AnalisisLayout from '../../layouts/AnalisisLayout.astro';
+import Similarity from '@/components/Similaridad'
 ---
 
 <Layout title='Factify' pathname='/similaridad'>
-  <AnalisisLayout pathname='similaridad'> Similaridad </AnalisisLayout>
+  <AnalisisLayout pathname='similaridad'> 
+    <Similarity client:idle />
+  </AnalisisLayout>
 </Layout>

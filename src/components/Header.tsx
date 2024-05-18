@@ -19,7 +19,9 @@ export default function Header({ pathname }: Props) {
   return (
     <header
       className={`w-full h-20 ${
-        openMenu ? 'bg-[#04001F]' : 'backdrop-blur-sm bg-[#04001F]/50'
+        openMenu
+          ? 'bg-[#04001F] border-b border-white md:border-none'
+          : 'backdrop-blur-sm bg-[#04001F]/50'
       } flex justify-center fixed inset-0 z-50 transition-all duration-500`}
     >
       <div className='w-4/5 flex flex-row justify-between items-center'>

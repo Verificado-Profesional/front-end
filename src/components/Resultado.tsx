@@ -1,3 +1,5 @@
+import { formatNumber } from '@/helpers/classificationMessages';
+
 interface Props {
   classification: boolean;
   classificationResult: string | undefined;
@@ -13,9 +15,6 @@ export default function Resultado({
   trueProbability,
   falseProbability,
 }: Props) {
-  const formatNumber = (number: number) => {
-    return (number * 100).toFixed();
-  };
   return (
     <article
       className={`w-full h-96 ${

@@ -1,3 +1,5 @@
+// TODO: REVEER TEXTOS
+
 export const getVeracityResult = (
   classification: boolean,
   accuracy: number
@@ -69,4 +71,8 @@ export const getSentimentMessages = (
   } else if (fixedAccuracy >= 50) {
     return 'Esta noticia tiene una probabilidad similar de presentar un enfoque positivo o negativo.';
   }
+};
+
+export const formatNumber = (number: number) => {
+  return (number * 100).toFixed();
 };

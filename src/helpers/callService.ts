@@ -5,6 +5,7 @@ const endpoints = {
   news: 'news/fetch-data',
   veracity: 'veracity',
   sentiment: 'sentiment',
+  similarity: 'similarity',
 };
 
 export const fetchData = async (link: string) => {
@@ -27,4 +28,11 @@ export const getClassification = async (
     text: content,
   });
   return (await callService(endpoints[classification], body)).json();
+};
+
+export const getSimilarity = async (content: string) => {
+  const body = JSON.stringify({
+    text: content,
+  });
+  return (await callService(endpoints.similarity, body)).json();
 };
