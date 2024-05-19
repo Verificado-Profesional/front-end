@@ -1,6 +1,6 @@
 ---
+import Dashboard from '../components/Dashboard';
 import Layout from '../layouts/Layout.astro';
-import Loading from '../components/Loading';
 ---
 
 <Layout title='Factify' pathname='/tendencias'>
@@ -8,7 +8,7 @@ import Loading from '../components/Loading';
     <section
       class="w-full h-screen bg-[url('/assets/Fondo.svg')] bg-fixed bg-auto bg-repeat grid place-items-center"
     >
-    <Loading />
+      <Dashboard client:idle/>
     </section>
   </main>
 </Layout>

@@ -61,6 +61,7 @@ export interface ResultadoSimilarProps {
 }
 
 export interface SimilaresProps {
+  firstTime?: boolean;
   topResults: Array<TopResult>;
 }
 

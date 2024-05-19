@@ -14,10 +14,12 @@ export default function useSimilarity({
   setIsLoading,
 }: SimilaresProps): SimilaresResponse {
   const [topResults, setTopResults] = useState([]);
+  const [firstTime, setFirstTime] = useState(true);
 
   useEffect(() => {
     if (content !== '') {
       setIsLoading(true);
+      setFirstTime(false);
       getSimilarity(content)
         .then((resp) => {
           setTopResults(resp.data.top_results);
@@ -30,9 +32,10 @@ export default function useSimilarity({
           setIsLoading(false);
         });
     } else {
+      setFirstTime(true);
       setTopResults([]);
     }
   }, [content]);
 
-  return { topResults };
+  return { firstTime, topResults };
 }
