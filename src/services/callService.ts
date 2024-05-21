@@ -1,15 +1,24 @@
 import { CallServiceError } from '@/errors/callServiceError';
+import type { CallServiceProps } from '@/types/types';
 
 const BASE_URL = 'http://localhost:8000';
 
-export const callService = async (endpoint: string, body: string) => {
-  const response = await fetch(`${BASE_URL}/${endpoint}`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body,
-  });
+export const callService = async ({
+  method = 'POST',
+  endpoint,
+  body,
+  params,
+}: CallServiceProps) => {
+  const response = await fetch(
+    `${BASE_URL}/${endpoint}?${params ? new URLSearchParams(params) : ''}`,
+    {
+      method: method,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body,
+    }
+  );
   if (response.status === 200) {
     return response;
   }

@@ -17,6 +17,7 @@
     "@types/react": "^18.2.63",
     "@types/react-dom": "^18.2.20",
     "astro": "^4.4.11",
+    "flowbite-react": "^0.9.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-google-charts": "^4.0.1",
