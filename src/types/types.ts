@@ -14,6 +14,21 @@ export interface ButtonIconProps {
   className?: string;
 }
 
+export interface NoticiaProps {
+  analysisByParagraph?: boolean;
+  paragraphs?: ClassificationServiceResponse[];
+}
+
+export interface UseAnalysisResponse {
+  analysisByParagraph: boolean;
+  setAnalysisByParagraph: Dispatch<SetStateAction<boolean>>;
+}
+
+export interface ActionButton {
+  title: string;
+  onClick: () => void;
+}
+
 export interface CallServiceProps {
   body?: string;
   endpoint: string;
@@ -36,10 +51,18 @@ export interface ClassificationProps {
   setIsLoading: Dispatch<SetStateAction<boolean>>;
 }
 
+export interface ClassificationServiceResponse {
+  classification: boolean;
+  trueProbability: number;
+  falseProbability: number;
+  content: string;
+}
+
 export interface ClassificationsResponse {
   classification: boolean;
   trueProbability: number;
   falseProbability: number;
+  paragraphs: ClassificationServiceResponse[];
 }
 
 export interface DatePickerProps {

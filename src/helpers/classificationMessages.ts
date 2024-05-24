@@ -13,7 +13,7 @@ export const getVeracityResult = (
   } else if (fixedAccuracy >= 60) {
     return `Posiblemente ${classificationText}`;
   } else {
-    `Podría ser ${classificationText}`;
+    return `Podría ser ${classificationText}`;
   }
 };
 
@@ -47,7 +47,7 @@ export const getSentimentResult = (
   } else if (fixedAccuracy >= 60) {
     return `Probablemente con enfoque ${classificationText}`;
   } else {
-    `El enfoque podría llegar a ser ${classificationText}`;
+    return `El enfoque podría llegar a ser ${classificationText}`;
   }
 };
 

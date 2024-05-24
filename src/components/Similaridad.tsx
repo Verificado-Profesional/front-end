@@ -36,7 +36,7 @@ export default function Similarity() {
       <Noticia />
       <div className='md:w-1/2 lg:w-2/6 w-full flex flex-col gap-5'>
         <Similares topResults={topResults} />
-        <BackButton />
+        <BackButton type='secondary' />
       </div>
     </div>
   );

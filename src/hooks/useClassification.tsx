@@ -6,6 +6,7 @@ import { getClassification } from '@/helpers/callService';
 // Types
 import type {
   ClassificationProps,
+  ClassificationServiceResponse,
   ClassificationsResponse,
 } from '@/types/types';
 
@@ -17,15 +18,23 @@ export default function useClassification({
   const [classification, setClassification] = useState(false);
   const [trueProbability, setTrueProbability] = useState(0);
   const [falseProbability, setFalseProbability] = useState(0);
+  const [paragraphs, setParagraphs] = useState<ClassificationServiceResponse[]>(
+    []
+  );
 
   useEffect(() => {
     if (content !== '') {
       setIsLoading(true);
       getClassification(classificationType, content)
         .then((classification) => {
-          setClassification(classification.data.classification);
-          setTrueProbability(classification.data.true_probability);
-          setFalseProbability(classification.data.false_probability);
+          setClassification(classification.data.predicted_text.classification);
+          setTrueProbability(
+            classification.data.predicted_text.true_probability
+          );
+          setFalseProbability(
+            classification.data.predicted_text.false_probability
+          );
+          setParagraphs(classification.data.predicted_paragraphs);
         })
         .catch((e) => {
           setClassification(false);
@@ -43,5 +52,5 @@ export default function useClassification({
     }
   }, [content]);
 
-  return { classification, trueProbability, falseProbability };
+  return { classification, trueProbability, falseProbability, paragraphs };
 }

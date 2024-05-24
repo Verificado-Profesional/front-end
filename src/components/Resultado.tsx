@@ -13,9 +13,7 @@ export default function Resultado({
 }: ResultadoProps) {
   return (
     <article
-      className={`w-full h-96 ${
-        classification ? 'bg-[var(--bg-green)]' : 'bg-[var(--bg-red)]'
-      } p-7 rounded-xl flex flex-col gap-10`}
+      className={`w-full h-96 bg-[var(--color-primary)] border border-white p-7 rounded-xl flex flex-col gap-10`}
     >
       <div className='w-full flex flex-col gap-5'>
         <div className='w-full h-2 flex'>
@@ -49,8 +47,8 @@ export default function Resultado({
         </div>
       </div>
       <div className='flex flex-col gap-5'>
-        <h2 className='font-semibold text-black'>{classificationResult}</h2>
-        <p className=' font-light text-black'>{classificationText}</p>
+        <h2 className='font-semibold text-white'>{classificationResult}</h2>
+        <p className=' font-light text-white'>{classificationText}</p>
       </div>
     </article>
   );

@@ -2,11 +2,13 @@
 import { useInfoContext } from '@/contexts/infoContext';
 
 // Custom hooks
+import useAnalysis from '@/hooks/useAnalysis';
 import useClassification from '@/hooks/useClassification';
 import useLoading from '@/hooks/useLoading';
 import useRedirect from '@/hooks/useRedirect';
 
 // Components
+import ActionButton from './ActionButton';
 import BackButton from './BackButton';
 import Loading from './Loading';
 import Noticia from './Noticia';
@@ -27,7 +29,8 @@ export default function Sentiment() {
   useRedirect({ content: info.content });
 
   const { isLoading, setIsLoading } = useLoading();
-  const { classification, trueProbability, falseProbability } =
+  const { analysisByParagraph, setAnalysisByParagraph } = useAnalysis();
+  const { classification, trueProbability, falseProbability, paragraphs } =
     useClassification({
       content: info.content,
       classificationType: Classification.sentiment,
@@ -62,7 +65,15 @@ export default function Sentiment() {
           trueProbability={trueProbability}
           falseProbability={falseProbability}
         />
-        <BackButton />
+        <div className='w-full flex flex-col-reverse md:flex-row gap-5'>
+          <BackButton />
+          <ActionButton
+            title={`Analizar por ${
+              analysisByParagraph ? 'contenido' : 'párrafo'
+            }`}
+            onClick={() => setAnalysisByParagraph(!analysisByParagraph)}
+          />
+        </div>
       </div>
     </div>
   );
