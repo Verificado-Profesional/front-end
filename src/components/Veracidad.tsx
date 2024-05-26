@@ -22,6 +22,7 @@ import {
 
 // Types
 import { Classification } from '@/types/types';
+import ResultadoParrafos from './ResultadoParrafos';
 
 export default function Veracity() {
   const { info } = useInfoContext();
@@ -55,19 +56,27 @@ export default function Veracity() {
         paragraphs={paragraphs}
       />
       <div className='md:w-2/6 w-full flex flex-col gap-5'>
-        <Resultado
-          classification={classification}
-          classificationResult={getVeracityResult(
-            classification,
-            classification ? trueProbability : falseProbability
-          )}
-          classificationText={getVeracityMessages(
-            classification,
-            classification ? trueProbability : falseProbability
-          )}
-          trueProbability={trueProbability}
-          falseProbability={falseProbability}
-        />
+        {analysisByParagraph ? (
+          <ResultadoParrafos
+            paragraphs={paragraphs}
+            getResultMessage={getVeracityResult}
+            getTextMessage={getVeracityMessages}
+          />
+        ) : (
+          <Resultado
+            classification={classification}
+            classificationResult={getVeracityResult(
+              classification,
+              classification ? trueProbability : falseProbability
+            )}
+            classificationText={getVeracityMessages(
+              classification,
+              classification ? trueProbability : falseProbability
+            )}
+            trueProbability={trueProbability}
+            falseProbability={falseProbability}
+          />
+        )}
         <div className='w-full flex flex-col-reverse md:flex-row gap-5'>
           <BackButton />
           <ActionButton

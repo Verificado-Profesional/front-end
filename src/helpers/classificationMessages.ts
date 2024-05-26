@@ -3,7 +3,7 @@
 export const getVeracityResult = (
   classification: boolean,
   accuracy: number
-) => {
+): string => {
   const fixedAccuracy = Number((accuracy * 100).toFixed());
   const classificationText = classification ? 'verdadera' : 'falsa';
   if (fixedAccuracy >= 95) {
@@ -20,7 +20,7 @@ export const getVeracityResult = (
 export const getVeracityMessages = (
   classification: boolean,
   accuracy: number
-) => {
+): string => {
   const fixedAccuracy = Number((accuracy * 100).toFixed());
   const classificationText = classification ? 'cierta' : 'falsa';
   if (fixedAccuracy >= 95) {
@@ -37,7 +37,7 @@ export const getVeracityMessages = (
 export const getSentimentResult = (
   classification: boolean,
   accuracy: number
-) => {
+): string => {
   const fixedAccuracy = Number((accuracy * 100).toFixed());
   const classificationText = classification ? 'positivo' : 'negativo';
   if (fixedAccuracy >= 95) {
@@ -54,7 +54,7 @@ export const getSentimentResult = (
 export const getSentimentMessages = (
   classification: boolean,
   accuracy: number
-) => {
+): string => {
   const fixedAccuracy = Number((accuracy * 100).toFixed());
   if (fixedAccuracy >= 95) {
     return `Esta noticia tiene una altísima probabilidad de presentar un tono ${
@@ -68,7 +68,7 @@ export const getSentimentMessages = (
     return `Esta noticia tiene una probabilidad moderada de presentar un tono ${
       classification ? 'amigable y conciliador' : 'hostil y polarizador'
     }. `;
-  } else if (fixedAccuracy >= 50) {
+  } else {
     return 'Esta noticia tiene una probabilidad similar de presentar un enfoque positivo o negativo.';
   }
 };

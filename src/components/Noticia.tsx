@@ -6,6 +6,7 @@ import ExternalLinkIcon from './icons/ExternalLinkIcon';
 
 // Types
 import type { NoticiaProps } from '@/types/types';
+import ResultadoParrafo from './ResultadoParrafo';
 
 export default function Noticia({
   analysisByParagraph = false,
@@ -33,13 +34,17 @@ export default function Noticia({
           )}
         </span>
       </div>
-      <div className='w-full max-h-4/5 h-full p-7 bg-[#04001F] rounded-b-xl overflow-y-scroll'>
+      <div className='w-full max-h-4/5 h-full p-7 bg-[#04001F] flex flex-col gap-5 rounded-b-xl overflow-y-scroll'>
         {analysisByParagraph ? (
-          paragraphs.map((paragraph) => paragraph.content)
+          paragraphs.map((paragraph, index) => (
+            <ResultadoParrafo
+              key={index}
+              paragraphNumber={index}
+              paragraphInfo={paragraph}
+            />
+          ))
         ) : (
-          <p className='text-white font-light text-balance truncate'>
-            {info.content}
-          </p>
+          <p className='text-white font-light text-balance'>{info.content}</p>
         )}
       </div>
     </article>

@@ -19,6 +19,12 @@ export interface NoticiaProps {
   paragraphs?: ClassificationServiceResponse[];
 }
 
+export interface ResultadoParrafosProps {
+  paragraphs: ClassificationServiceResponse[];
+  getResultMessage: (classification: boolean, accuracy: number) => string;
+  getTextMessage: (classification: boolean, accuracy: number) => string;
+}
+
 export interface UseAnalysisResponse {
   analysisByParagraph: boolean;
   setAnalysisByParagraph: Dispatch<SetStateAction<boolean>>;
@@ -53,8 +59,8 @@ export interface ClassificationProps {
 
 export interface ClassificationServiceResponse {
   classification: boolean;
-  trueProbability: number;
-  falseProbability: number;
+  true_probability: number;
+  false_probability: number;
   content: string;
 }
 
@@ -63,6 +69,11 @@ export interface ClassificationsResponse {
   trueProbability: number;
   falseProbability: number;
   paragraphs: ClassificationServiceResponse[];
+}
+
+export interface ResultadoParrafoPorps {
+  paragraphInfo: ClassificationServiceResponse;
+  paragraphNumber: number;
 }
 
 export interface DatePickerProps {
