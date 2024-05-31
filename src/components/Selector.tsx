@@ -37,7 +37,7 @@ const customTheme: FlowbiteDropdownTheme = {
       auto: 'border border-gray-200 bg-white text-gray-900 dark:border-none dark:bg-gray-700 dark:text-white',
     },
     target:
-      'group relative justify-center p-0.5 transition-[color,background-color,border-color,text-decoration-color,fill,stroke,box-shadow] focus:z-10 dark:enabled:hover:bg-cyan-700 text-white w-fit bg-[var(--color-primary)] enabled:hover:bg-[#92A7FF] focus:ring-1 focus:outline-none focus:ring-[var(--color-primary)] font-medium rounded-3xl border border-white text-sm text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800',
+      'group capitalize relative justify-center p-0.5 transition-[color,background-color,border-color,text-decoration-color,fill,stroke,box-shadow] focus:z-10 dark:enabled:hover:bg-cyan-700 text-white w-fit bg-[var(--color-primary)] enabled:hover:bg-[#92A7FF] focus:ring-1 focus:outline-none focus:ring-[var(--color-primary)] font-medium rounded-3xl border border-white text-sm text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800',
   },
   inlineWrapper: 'flex items-center',
 };
@@ -50,8 +50,12 @@ export default function Selector({ label, items, setSelected }: SelectorProps) {
     <Dropdown theme={customTheme} label={label}>
       <div className='max-h-[20rem] overflow-y-scroll'>
         {items.map((item) => (
-          <DropdownItem key={item} onClick={() => setSelected(item)}>
-            {item}
+          <DropdownItem
+            className='capitalize'
+            key={item}
+            onClick={() => setSelected(item)}
+          >
+            {item.replace('-', ' ')}
           </DropdownItem>
         ))}
       </div>

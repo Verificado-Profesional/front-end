@@ -11,19 +11,14 @@ import useXTrends from '@/hooks/useTrends';
 
 export default function XTrends() {
   const { isLoading, setIsLoading } = useLoading();
-  const {
-    options,
-    regions,
-    trends,
-    date,
-    region,
-    setRegion,
-    handleDateChange,
-  } = useXTrends({
-    hTitle: 'Cantidad de Tweets',
-    vTitle: 'Tweet',
-    setIsLoading,
-  });
+  const { options, trends, date, region, setRegion, handleDateChange } =
+    useXTrends({
+      hTitle: 'Cantidad de Tweets',
+      vTitle: 'Tweet',
+      setIsLoading,
+    });
+
+  const regions = ['argentina', 'buenos-aires', 'cordoba', 'rosario'];
 
   return (
     <div className='w-full rounded-3xl bg-[var(--color-primary)]/50 backdrop-blur-[4px] border-2 border-white flex flex-col'>
@@ -34,7 +29,7 @@ export default function XTrends() {
         <Selector
           items={regions}
           setSelected={setRegion}
-          label={region === '' ? 'Regiones' : region}
+          label={region === '' ? 'Argentina' : region.replace('-', ' ')}
         />
       </div>
       <div className='w-full h-[35rem] relative -z-10 bg-white rounded-b-[22px] p-5'>
