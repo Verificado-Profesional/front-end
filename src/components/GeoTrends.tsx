@@ -9,6 +9,9 @@ import Selector from './Selector';
 import useGeoTrends from '@/hooks/useGeoTrends';
 import useLoading from '@/hooks/useLoading';
 
+// Data
+import keys from '@/data/keys.json';
+
 export default function GeoTrends() {
   const { isLoading, setIsLoading } = useLoading();
   const { options, trends, regions, trend, date, setTrend, handleDateChange } =
@@ -20,13 +23,13 @@ export default function GeoTrends() {
   return (
     <div className='w-full rounded-3xl bg-[var(--color-primary)]/50 backdrop-blur-[4px] border-2 border-white flex flex-col'>
       <div className='w-full p-5 items-start md:items-center rounded-t-[22px] bg-[var(--color-primary)]/50 backdrop-blur-[4px] flex md:flex-row flex-col gap-5'>
-        Fecha
+        {keys.trends_date_title}
         <DatePicker date={date} onChange={handleDateChange} />
-        {trend === '' ? null : 'Tendencia'}
+        {trend === '' ? null : keys.trends_trend_title}
         <Selector
           items={trends}
           setSelected={setTrend}
-          label={trend === '' ? 'Tendencia' : trend}
+          label={trend === '' ? keys.trends_trend_title : trend}
         />
       </div>
       <div className='w-full h-[35rem] relative -z-10 bg-white rounded-b-[22px] p-5'>
@@ -36,7 +39,7 @@ export default function GeoTrends() {
           </div>
         ) : regions.length === 1 ? (
           <p className='w-full h-full flex justify-center items-center text-center text-xl font-medium text-[var(--color-primary)]'>
-            No encontramos tendencias para la fecha seleccionada
+            {keys.trends_no_trends_finded}
           </p>
         ) : (
           <Chart

@@ -10,6 +10,9 @@ import useLoading from '@/hooks/useLoading';
 // Components
 import Loading from './Loading';
 
+// Data
+import keys from '@/data/keys.json';
+
 // Icons
 import ButtonIcon from './ButtonIcon';
 
@@ -45,11 +48,15 @@ export default function Analizar() {
         >
           <div className='w-full flex flex-col lg:flex-row justify-between lg:items-center items-start gap-4'>
             <h1 className='text-[#04001F] text-4xl font-bold'>
-              Ingresar Noticia
+              {isWithLink ? keys.analizar_new_title : keys.analizar_text_title}
             </h1>
             <ButtonIcon
               onClick={handleClick}
-              title={isWithLink ? 'Manual' : 'Link'}
+              title={
+                isWithLink
+                  ? keys.analizar_manual_button_title
+                  : keys.analizar_link_button_title
+              }
               icon={isWithLink ? 'TextIcon' : 'LinkIcon'}
               className='flex flex-row-reverse lg:flex-row text-[#04001F] gap-4'
             />
@@ -72,7 +79,7 @@ export default function Analizar() {
             <textarea
               id='newArea'
               className='border rounded-xl border-[#04001F] h-3/5 text-[#04001F] p-4 resize-none outline-none'
-              placeholder='Ingresar noticia'
+              placeholder={keys.analizar_text_title}
               onChange={handleChange}
             />
           )}
@@ -87,7 +94,7 @@ export default function Analizar() {
                 onClick={handleSearch}
                 className={`w-40 px-4 py-2 bg-[#04001F] hover:bg-[#242844] rounded-3xl font-semibold flex justify-center items-center transition-all duration-300`}
               >
-                Verificar link
+                {keys.analizar_verify_link_button}
               </button>
             )}
             {(!isWithLink || (isWithLink && info.content !== '')) && (
@@ -96,7 +103,7 @@ export default function Analizar() {
                 href='/analizar/veracidad'
                 className='w-40 px-4 py-2 bg-[#04001F] hover:bg-[#242844] rounded-3xl font-semibold flex justify-center items-center transition-all duration-300'
               >
-                Analizar
+                {keys.analizar_button}
               </a>
             )}
           </div>

@@ -1,7 +1,11 @@
+---
+import keys from '@/data/keys.json';
+---
+
 <section class='w-full flex justify-center items-center'>
   <div class='w-4/5 flex flex-col justify-between items-start'>
     <h1 class='text-3xl uppercase font-black text-[#92A7FF] mt-10 mb-10'>
-      Realizá diferentes análisis
+      {keys.home_analysis_title}
     </h1>
     <div class='w-full grid lg:grid-cols-5 items-start mb-10 gap-8'>
       <article
@@ -14,14 +18,13 @@
           height='auto'
         />
         <div class='flex flex-col justify-center items-start w-full'>
-          <h2 class='text-xl text-left font-semibold'>Veracidad</h2>
+          <h2 class='text-xl text-left font-semibold'>
+            {keys.home_analysis_veracity_title}
+          </h2>
           <p
             class='flex items-center justify-center w-full text-left font-extralight'
           >
-            Nuestra innovadora herramienta utiliza un algoritmo inteligente,
-            entrenado con una base de datos exclusiva, para determinar con
-            precisión si una noticia es auténtica o falsa. ¡Obtén la verdad al
-            instante!
+            {keys.home_analysis_veracity_subtitle}
           </p>
         </div>
       </article>
@@ -35,14 +38,13 @@
           height='auto'
         />
         <div class='flex flex-col justify-center items-start w-full'>
-          <h2 class='text-xl text-left font-semibold'>Sentimiento</h2>
+          <h2 class='text-xl text-left font-semibold'>
+            {keys.home_analysis_sentiment_title}
+          </h2>
           <p
             class='flex items-center justify-center w-full text-left font-extralight'
           >
-            Descubre cómo se sienten realmente tus lectores con nuestro potente
-            algoritmo de análisis de sentimientos. Entrenado con nuestra amplia
-            base de datos, identifica si una noticia tiene un enfoque negativo o
-            positivo.
+            {keys.home_analysis_sentiment_subtitle}
           </p>
         </div>
       </article>

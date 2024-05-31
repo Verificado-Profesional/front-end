@@ -14,6 +14,9 @@ import Loading from './Loading';
 import Noticia from './Noticia';
 import Resultado from './Resultado';
 
+// Data
+import keys from '@/data/keys.json';
+
 // Helpers
 import {
   getSentimentMessages,
@@ -80,9 +83,11 @@ export default function Sentiment() {
         <div className='w-full flex flex-col-reverse md:flex-row gap-5'>
           <BackButton />
           <ActionButton
-            title={`Analizar por ${
-              analysisByParagraph ? 'contenido' : 'párrafo'
-            }`}
+            title={
+              analysisByParagraph
+                ? keys.analizar_action_button_content
+                : keys.analizar_action_button_paragraph
+            }
             onClick={() => setAnalysisByParagraph(!analysisByParagraph)}
           />
         </div>

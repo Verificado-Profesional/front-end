@@ -1,6 +1,9 @@
 // Context
 import { useInfoContext } from '@/contexts/infoContext';
 
+// Data
+import keys from '@/data/keys.json';
+
 // Icons
 import ExternalLinkIcon from './icons/ExternalLinkIcon';
 
@@ -19,7 +22,7 @@ export default function Noticia({
       <div className='w-full p-7 rounded-t-lg bg-white'>
         <span className=' border-l-2 border-[#04001F] pl-5 flex flex-row justify-between'>
           <h1 className='text-[#04001F] font-semibold uppercase'>
-            Noticia
+            {keys.analizar_noticia_title}
             {analysisByParagraph ? ` - ${paragraphs.length} párrafos` : ''}
           </h1>
           {info.link === '' ? null : (

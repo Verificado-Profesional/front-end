@@ -1,3 +1,6 @@
+// Data
+import keys from '@/data/keys.json';
+
 // Icons
 import BackIcon from './icons/BackIcon';
 
@@ -8,7 +11,9 @@ export default function BackButton({ type = 'primary' }: { type?: string }) {
       href='/analizar'
     >
       <BackIcon className='w-6' />
-      <span className={type === 'primary' ? 'md:hidden flex' : ''}>Volver</span>
+      <span className={type === 'primary' ? 'md:hidden flex' : ''}>
+        {keys.analizar_back_button}
+      </span>
     </a>
   );
 }

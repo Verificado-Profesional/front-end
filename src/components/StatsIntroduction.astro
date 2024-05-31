@@ -1,5 +1,6 @@
 ---
 import Button from './Button.astro';
+import keys from "@/data/keys.json"
 ---
 
 <section
@@ -10,21 +11,13 @@ import Button from './Button.astro';
   >
     <article class='w-full lg:w-1/2 flex flex-col gap-5 relative z-0'>
       <h2 class='text-lg lg:text-xl font-medium text-pretty'>
-        Descubriendo la Verdad a Través de los Números
+        {keys.home_stats_title}
       </h2>
       <p class='text-lg lg:text-xl font-extralight'>
-        En un mundo donde la verdad es a menudo difícil de distinguir entre el
-        ruido de la desinformación, ¡Factify! brilla como un faro de
-        confiabilidad. Más que una simple herramienta de verificación de hechos,
-        ofrecemos una ventana hacia la verdad a través de estadísticas globales
-        y generales de una variedad de noticias. Con nuestra plataforma, puedes
-        explorar tendencias, patrones y datos reveladores que te permiten
-        entender mejor el panorama informativo. Ya no se trata solo de discernir
-        la verdad de la mentira, sino de comprender las tendencias que subyacen
-        en el flujo constante de información.
+        {keys.home_stats_subtitle}
       </p>
       <div class='flex justify-start'>
-        <Button title='Ver tendencias' href='/tendencias' />
+        <Button title={keys.home_stats_button_title} href='/tendencias' />
       </div>
     </article>
     <picture class='relative z-0 lg:w-[22rem] lg:h-[22rem] w-[18rem] h-[18rem]'>

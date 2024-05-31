@@ -1,3 +1,7 @@
+---
+import keys from "@/data/keys.json"
+---
+
 <section
   class="w-full lg:h-screen bg-[url('/assets/Fondo.svg')] bg-fixed bg-auto bg-repeat flex justify-center items-center"
 >
@@ -6,13 +10,10 @@
   >
     <article class='w-full lg:w-1/2 flex flex-col gap-5 relative z-0'>
       <h2 class='text-lg lg:text-xl font-medium text-pretty'>
-        Desbloqueando el Poder de la Verdad en un Mundo de Desinformación
+        {keys.home_introduction_title}
       </h2>
       <p class='text-md lg:text-lg font-extralight'>
-        En una era donde la desinformación se propaga como un incendio forestal,
-        hay un faro de luz que atraviesa la niebla de las noticias falsas:
-        ¡Factify! Somos tu fuente definitiva para la verificación de hechos,
-        precisión y confiabilidad en un paisaje digital cada vez más complejo.
+        {keys.home_introduction_subtitle}
       </p>
     </article>
     <picture class='relative z-0 lg:w-[22rem] lg:h-[22rem] w-[18rem] h-[18rem]'>

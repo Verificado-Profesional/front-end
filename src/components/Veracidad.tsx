@@ -14,6 +14,9 @@ import useClassification from '@/hooks/useClassification';
 import useLoading from '@/hooks/useLoading';
 import useRedirect from '@/hooks/useRedirect';
 
+// Data
+import keys from '@/data/keys.json';
+
 // Helpers
 import {
   getVeracityMessages,
@@ -80,9 +83,11 @@ export default function Veracity() {
         <div className='w-full flex flex-col-reverse md:flex-row gap-5'>
           <BackButton />
           <ActionButton
-            title={`Analizar por ${
-              analysisByParagraph ? 'contenido' : 'párrafo'
-            }`}
+            title={
+              analysisByParagraph
+                ? keys.analizar_action_button_content
+                : keys.analizar_action_button_paragraph
+            }
             onClick={() => setAnalysisByParagraph(!analysisByParagraph)}
           />
         </div>

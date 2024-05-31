@@ -1,5 +1,8 @@
 import { useState } from 'react';
 
+// Data
+import keys from '@/data/keys.json';
+
 // Icons
 import HamburguerIcon from './icons/HamburguerIcon';
 
@@ -49,28 +52,28 @@ export default function Header({ pathname }: HeaderProps) {
                 pathname === '/' ? 'selected' : ''
               } py-3 md:py-1 lg:w-32 md:w-24 text-center md:text-sm lg:text-base transition-all duration-300 ease-in-out`}
             >
-              <a href='/'>Inicio</a>
+              <a href='/'>{keys.section_inicio}</a>
             </li>
             <li
               className={`${
                 pathname === '/analizar' ? 'selected' : ''
               } py-3 md:py-1 lg:w-32 md:w-24 text-center md:text-sm lg:text-base transition-all duration-300 ease-in-out`}
             >
-              <a href='/analizar'>Analizar</a>
+              <a href='/analizar'>{keys.section_analizar}</a>
             </li>
             <li
               className={`${
                 pathname === '/tendencias' ? 'selected' : ''
               } py-3 md:py-1 lg:w-32 md:w-24 text-center md:text-sm lg:text-base transition-all duration-300 ease-in-out`}
             >
-              <a href='/tendencias'>Tendencias</a>
+              <a href='/tendencias'>{keys.section_tendencias}</a>
             </li>
             <li
               className={`${
                 pathname === '/informate' ? 'selected' : ''
               } py-3 md:py-1 lg:w-32 md:w-24 text-center md:text-sm lg:text-base transition-all duration-300 ease-in-out`}
             >
-              <a href='/informate'>Informate</a>
+              <a href='/informate'>{keys.section_informate}</a>
             </li>
           </ul>
         </nav>
