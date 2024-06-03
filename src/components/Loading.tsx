@@ -6,7 +6,6 @@ import '@/styles/styles.css';
 
 export default function Loading() {
   return (
-    // <div className="w-24 h-24 relative flex after:content-['Cargando...'] after:text-black after:flex after:items-center after:justify-center after:w-32 after:h-5 after:bg-white after:absolute after:rounded-md after:-bottom-1/2 after:left-[-25%] after:-z-0">
     <div className='w-24 h-24 relative flex loader'>
       <Sello />
       <div

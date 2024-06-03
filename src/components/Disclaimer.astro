@@ -1,0 +1,38 @@
+---
+import WarningIcon from '@/components/icons/WarningIcon';
+export const prerender = false;
+---
+
+<div
+  class='group fixed cursor-auto flex items-center justify-center warning bottom-5 right-5 w-24 h-24 rounded-full'
+>
+  <WarningIcon className='w-12 z-10' />
+  <span
+    class='absolute bottom-28 right-0 hidden w-[19rem] origin-bottom-right flex-col items-start justify-center gap-5 rounded-xl bg-[#04001f]/95 p-5 backdrop-blur-[4px] group-hover:flex md:w-96'
+  >
+    <h1 class='font-bold'>Aviso de precaución:</h1>
+    <p class='w-full'>
+      Nuestros algoritmos ofrecen predicciones y análisis valiosos, pero
+      recomendamos encarecidamente complementar esta información con
+      investigaciones adicionales. La verificación de fuentes múltiples y la
+      consideración de diversos puntos de vista son esenciales para una
+      comprensión completa. Utilice nuestros servicios como una herramienta, no
+      como una fuente única de verdad.
+    </p>
+  </span>
+</div>
+
+<style>
+    span {
+        animation: spark 1s ease-in-out infinite alternate
+    }
+
+    @keyframes spark {
+        0% {
+            box-shadow: 0px 0px 8px 4px rgba(255,255,255,.25);
+        }
+        100%{
+            box-shadow: 0px 0px 4px 2px rgba(255,255,255,.25);
+        }
+    }
+</style>

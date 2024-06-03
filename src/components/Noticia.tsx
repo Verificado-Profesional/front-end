@@ -47,7 +47,9 @@ export default function Noticia({
             />
           ))
         ) : (
-          <p className='text-white font-light text-balance'>{info.content}</p>
+          <p className='text-white font-light text-justify whitespace-pre-line'>
+            {info.content}
+          </p>
         )}
       </div>
     </article>

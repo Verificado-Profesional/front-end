@@ -15,7 +15,7 @@ export default function useGeoTrends({
     handleDateChange,
     setSelectorValue,
   } = useCommonTrends({
-    initialsChartValues: [['Provincias', 'Porcentaje de búsquedas']],
+    initialsChartValues: [['Provincias', 'Grado de interés']],
     isTwitter: false,
     isGeo: true,
     setIsLoading,
