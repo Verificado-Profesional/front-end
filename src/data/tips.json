@@ -1,27 +1,27 @@
 [
   {
     "id": 1,
-    "title": "Verificá antes de compartir",
-    "description": "Asegúrate de investigar bien la fuente, analiza el contenido, compáralo con otras fuentes, revisa la fecha y pregunta a los expertos. Recuerda que la desinformación puede tener consecuencias graves, como causar pánico o desinformar a la gente en temas importantes como la salud pública o la política."
+    "title": "Protegé tu Mente de la Desinformación",
+    "description": "Para protegernos de la desinformación, debemos aprender a identificarla y actuar con precaución. No compartas contenido sin verificar su veracidad y contexto. La desinformación manipula nuestras emociones para provocar reacciones rápidas. Revisá la autenticidad de las cuentas y las fuentes de información. Dedicá unos minutos a investigar antes de compartir, y si sabes que algo es falso, informá a quien te lo compartió de manera empática y privada para detener la cadena de desinformación."
   },
   {
     "id": 2,
-    "title": "Detecta noticias falsas",
-    "description": "Mira si los títulos son exagerados, verifica si hay fuentes confiables, cuidado con los errores gramaticales, las imágenes manipuladas y si viene de cuentas desconocidas. Las noticias falsas a menudo se comparten para influir en opiniones o causar división en la sociedad. Mantente alerta y cuestiona la información antes de compartirla."
+    "title": "Evaluá las Noticias con Perspectiva",
+    "description": "Las noticias pueden estar sesgadas y debemos ser críticos al consumirlas. Analizá quién publica la noticia, cuál es su historial y posibles sesgos. Verificá si otras fuentes confiables reportan lo mismo. Prestá atención a los titulares sensacionalistas, ya que a menudo distorsionan la realidad para captar nuestra atención. Comparar múltiples perspectivas te ayudará a formar una visión más equilibrada y a no caer en trampas de desinformación."
   },
   {
     "id": 3,
-    "title": "Enfrenta enfoques negativos",
-    "description": "Es importante cuidar nuestra mente, limita la exposición a información negativa, busca cosas positivas, rodéate de gente optimista y piensa siempre con sentido crítico. La exposición constante a noticias negativas puede afectar nuestra salud mental y bienestar general. Prioriza el consumo de contenido que te motive y te haga sentir bien."
+    "title": "Evitá Difundir Información Falsa",
+    "description": "Evitá ser un amplificador de desinformación tomando medidas proactivas. Antes de compartir contenido, verificá su autenticidad en sitios de verificación de hechos. Desconfiá de mensajes que apelan a emociones fuertes sin proporcionar evidencia sólida. Educá a tu círculo cercano sobre la importancia de la verificación de información. Si encontrás contenido falso, reportalo en la plataforma correspondiente para limitar su alcance y proteger a otros usuarios."
   },
   {
     "id": 4,
-    "title": "Reenvía con responsabilidad",
-    "description": "No compartas sin verificar, añade contexto, evita las cadenas de mensajes y sé consciente de lo que compartes. La difusión de información errónea puede causar confusión y daño a otras personas. Antes de compartir cualquier cosa, verifica su veracidad y considera el impacto que puede tener en quienes la reciben."
+    "title": "Mantenete Informado y Actualizado",
+    "description": "Para combatir la desinformación, es fundamental mantenerse informado y actualizado. Seguí fuentes confiables y verificá regularmente la información. Participá en cursos o talleres sobre alfabetización mediática y digital. Mantenete al tanto de nuevas formas de desinformación y aprende a utilizar herramientas digitales para verificar información. Un ciudadano bien informado es menos susceptible a caer en la trampa de la desinformación."
   },
   {
     "id": 5,
-    "title": "Refuerza tu protección",
-    "description": "Sigue a expertos de confianza, utiliza herramientas de verificación, mantente informado sobre las tácticas de desinformación, habla con otros y sé crítico con lo que lees. La lucha contra la desinformación es responsabilidad de todos. Mantente educado y comprometido con la verdad, y ayuda a otros a hacer lo mismo."
+    "title": "Construyendo una Comunidad Informada",
+    "description": "La lucha contra la desinformación es más efectiva cuando trabajamos juntos. Compartí recursos y herramientas de verificación con tu comunidad. Participá en discusiones constructivas y fomentá un ambiente de respeto y aprendizaje mutuo. Colaborá con organizaciones que promuevan la veracidad y transparencia informativa. Juntos, podemos construir una red de personas informadas que se apoyan mutuamente para enfrentar la desinformación y proteger nuestra integridad informativa."
   }
 ]
