@@ -73,7 +73,7 @@ export default function useCommonTrends({
           )
             .filter(([key]) => key !== 'trend' && key !== 'date')
             .map(([key, value]): [string, string | number] => [
-              key.replaceAll('_', ' '),
+              key === 'misiónes' ? 'misiones' : key.replaceAll('_', ' '),
               value as string | number,
             ]);
 
